@@ -1,14 +1,17 @@
-class GarmentController < ApplicationController
+class GarmentsController < ApplicationController
+
   def new
     @garment = Garment.new
+    @categories = Category.all
     authorize @garment
   end
 
   def create
     @garment = Garment.new(garment_params)
     @garment.user = current_user
+    authorize @garment
     if @garment.save!
-      redirect_to garment_path(@garment)
+      redirect_to garment_edit_shape_path(@garment)
     else
       render :new, status: :unprocessable_entity
     end

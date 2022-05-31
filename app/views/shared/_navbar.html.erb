@@ -1,0 +1,31 @@
+
+<header role="banner">
+  <div class= "navbar_whole">
+    <form class="search-container" action="#">
+      <input id="search-box" type="text" class="search-box" name="q" />
+      <label for="search-box"><i class=" search-icon fa-solid fa-magnifying-glass"></i></label>
+      <input type="submit" id="search-submit" />
+    </form>
+
+    <div class = "top_nav">
+      <img id="logo-main" src="assets/logo_FIT.png" width="100" alt="Logo Thing main logo">
+
+
+      <ul class="navbar_link_shapes">
+        <li><a href="#">Pants</a></li>
+        <li><a href="#">Tops</a></li>
+        <li><a href="#">Dresses & Overalls</a></li>
+        <li><a href="#">Jackets</a></li>
+      </ul>
+    </div>
+
+    <div class="avatar_bubble dropdown">
+       <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "My Avatar", "#", class: "dropdown-item" %>
+          <%= link_to "My Prototypes", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+         </div>
+       </div>
+  </div>
+</header>

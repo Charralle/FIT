@@ -1,6 +1,7 @@
 class GarmentController < ApplicationController
   def new
     @garment = Garment.new
+    authorize @garment
   end
 
   def create
@@ -11,6 +12,7 @@ class GarmentController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @garment
   end
 
   def update
@@ -21,32 +23,38 @@ class GarmentController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @garment
   end
 
   def show
     @garment = Garment.find(params[:id])
+    authorize @garment
   end
 
   def index
-    @garments = Garment.all
+    @garments = policy_scope(Garment)
   end
 
   def destroy
     @garment = Garment.find(params[:id])
     @garment.destroy!
     redirect_to garments_path, status: :see_other
+    authorize @garment
   end
 
   def edit_shape
     @garment = Garment.find(params[:id])
+    authorize @garment
   end
 
   def edit_fabric
     @garment = Garment.find(params[:id])
+    authorize @garment
   end
 
   def edit_detail
     @garment = Garment.find(params[:id])
+    authorize @garment
   end
 
   private

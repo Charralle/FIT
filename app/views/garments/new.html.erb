@@ -1,0 +1,9 @@
+<h2>Créez votre vêtement</h2>
+
+<h3>Choisissez une catégorie</h3>
+
+<ol>
+  <% @categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ol>

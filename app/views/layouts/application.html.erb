@@ -6,11 +6,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  <%# ci dessous la police Fonts %>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Special+Elite&family=Water+Brush&display=swap" rel="stylesheet">
+  <%# ci dessus fin de la police Fonts %>
+  <%# fonts du footer %>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <%# fonts du footer %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+    <div content-wrapper>
     <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
+
+
+
   </body>
 </html>

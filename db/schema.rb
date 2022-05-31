@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_091016) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_142641) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_091016) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shape_id"
   end
 
   create_table "fabrics", force: :cascade do |t|
@@ -35,12 +36,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_091016) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shape_id"
   end
 
   create_table "garments", force: :cascade do |t|
     t.boolean "selected"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "category_id"
+    t.integer "shape_id"
+    t.integer "fabric_id"
+    t.integer "detail_id"
   end
 
   create_table "shapes", force: :cascade do |t|
@@ -49,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_091016) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
   create_table "users", force: :cascade do |t|

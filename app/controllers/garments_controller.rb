@@ -21,8 +21,15 @@ class GarmentsController < ApplicationController
   def update
     @garment = Garment.find(params[:id])
     @garment.update(garment_params)
-    if @garment.update(garment)
-      redirect_to garment_path(@garment)
+
+    if @garment.update(garment_params)
+      if garment_params.key?(:shape_id)
+        redirect_to garment_edit_fabric_path(@garment)
+      elsif garment_params.key?(:fabric_id)
+        redirect_to garment_edit_detail_path(@garment)
+      elsif garment_params.key?(:detail_id)
+        redirect_to garment_url(@garment)
+      end
     else
       render :new, status: :unprocessable_entity
     end

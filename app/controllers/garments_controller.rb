@@ -8,7 +8,7 @@ class GarmentsController < ApplicationController
 
   def create
     @garment = Garment.new(garment_params)
-    @garment.user = current_user
+    @garment.user_id = current_user.id
     authorize @garment
     if @garment.save!
       redirect_to garment_edit_shape_path(@garment)
@@ -63,6 +63,6 @@ class GarmentsController < ApplicationController
   private
 
   def garment_params
-    params.require(:garment).permit(:category, :shape, :fabric, :detail, :selected)
+    params.require(:garment).permit(:user_id, :category_id, :shape_id, :fabric_id, :detail_id, :selected)
   end
 end

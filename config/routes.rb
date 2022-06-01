@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :garments, only: [:new, :create, :index, :show, :update, :destroy]
-  get '/garments/id/edit_shape', to: 'garments#edit_shape'
-  get '/garments/id/edit_fabric', to: 'garments#edit_fabric'
-  get '/garments/id/edit_detail', to: 'garments#edit_detail'
+  get '/garments/:id/edit_shape', to: 'garments#edit_shape', as: :garment_edit_shape
+  get '/garments/:id/edit_fabric', to: 'garments#edit_fabric', as: :garment_edit_fabric
+  get '/garments/:id/edit_detail', to: 'garments#edit_detail', as: :garment_edit_detail
 
 
 

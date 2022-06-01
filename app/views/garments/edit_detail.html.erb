@@ -1,0 +1,6 @@
+<h3>Choisissez un détail</h3>
+
+<%= simple_form_for @garment do |f| %>
+  <%= f.input :detail_id, as: :radio_buttons, collection: Detail.all %>
+  <%= f.button :submit %>
+<% end %>

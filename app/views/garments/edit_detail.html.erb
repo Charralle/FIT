@@ -2,6 +2,7 @@
 
 <% selection = Detail.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
+
 <%= simple_form_for @garment do |f| %>
   <%= f.input :detail_id, as: :radio_buttons, collection: selection %>
   <%= f.button :submit %>

@@ -1,1 +1,171 @@
 // Specific CSS for your home-page
+#hero-main{
+  position: relative;
+  padding-top: 2%;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+
+}
+
+.text-box-hero-button{
+  .button_fabric_hero{
+position: absolute;
+  display: flex;
+ color: black;
+top: 72%;
+left: 80%;
+background-color: rgb(187, 161, 117);
+font-family: 'Rajdhani', sans-serif;
+color: #fff;
+}
+
+
+}
+
+.button_fabric_hero:link,
+.button_fabric_hero:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 35px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: absolute;
+}
+
+.button_fabric_hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button_fabric_hero:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button_fabric_hero-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.button_fabric_hero::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.button_fabric_hero-white::after {
+  background-color: #fff;
+}
+
+.button_fabric_hero:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.button_fabric_hero-animated {
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+///////////////////////////////////////
+
+.text-box-hero-button{
+  .button_model_hero{
+position: absolute;
+  display: flex;
+ color: black;
+top: 147%;
+left: 48%;
+background-color: rgb(187, 161, 117);
+font-family: 'Rajdhani', sans-serif;
+color: #fff;
+}
+
+
+}
+
+.button_model_hero:link,
+.button_model_hero:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 35px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: absolute;
+}
+
+.button_model_hero_hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button_model_hero:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button_model_hero-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.button_model_hero::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.button_model_hero-white::after {
+  background-color: #fff;
+}
+
+.button_model_hero:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.button_model_hero-animated {
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}

@@ -31,5 +31,5 @@ Detail.create({shape_id: shape.id, name: "Detail 1", description: "Le Detail 1, 
 Detail.create({shape_id: shape.id, name: "Detail 2", description: "Le Detail 1, donne un style incroyable", code: "DETAIL2"})
 Detail.create({shape_id: shape.id, name: "Detail 3", description: "Le Detail 1, donne un style incroyable", code: "DETAIL3"})
 
-
+Garment.create({user_id: 1, category_id: pants.id})
 p "Seeds created Sir !"

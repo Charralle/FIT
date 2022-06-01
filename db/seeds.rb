@@ -34,5 +34,4 @@ Detail.create({shape_id: shape.id, name: "Detail 3", description: "Le Detail 1, 
 
 Garment.create( {user_id: 1, category_id: pants.id} )
 
-
 p "Seeds created Sir !"

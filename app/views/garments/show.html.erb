@@ -1,0 +1,10 @@
+<h2>Votre vêtement</h2>
+
+  <ol>
+    <li><%= @garment.category.name %></li>
+    <li><%= @garment.shape.name %></li>
+    <li><%= @garment.fabric.name %></li>
+    <% if @garment.detail %>
+      <li><%= @garment.detail.name %></li>
+    <% end %>
+  </ol>

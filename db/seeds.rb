@@ -9,6 +9,7 @@
 
 p "I'm creating your seeds Sir"
 
+Garment.destroy_all
 Category.destroy_all
 Shape.destroy_all
 Fabric.destroy_all
@@ -17,7 +18,7 @@ Detail.destroy_all
 pants = Category.create({name: "Pant", code: "PANT"})
 shirt = Category.create({name: "Shirt", code: "SHIRT"})
 dress = Category.create({name: "Dress", code: "DRESS"})
-overall = Category.create({name: "overall", code: "OVER"})
+overall = Category.create({name: "Overall", code: "OVER"})
 
 shape = Shape.create({category_id: pants.id, name: "Cargo", description: "Pantalon Cargo, bien pratique", code: "CARGO"})
 Shape.create({category_id: pants.id, name: "Jean", description: "Pantalon Jean, bien classique", code: "JEAN"})
@@ -31,5 +32,6 @@ Detail.create({shape_id: shape.id, name: "Detail 1", description: "Le Detail 1, 
 Detail.create({shape_id: shape.id, name: "Detail 2", description: "Le Detail 1, donne un style incroyable", code: "DETAIL2"})
 Detail.create({shape_id: shape.id, name: "Detail 3", description: "Le Detail 1, donne un style incroyable", code: "DETAIL3"})
 
-Garment.create({user_id: 1, category_id: pants.id})
+Garment.create( {user_id: 1, category_id: pants.id} )
+
 p "Seeds created Sir !"

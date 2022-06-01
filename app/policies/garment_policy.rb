@@ -1,7 +1,7 @@
 class GarmentPolicy < ApplicationPolicy
 
   def show?
-    true
+    update?
   end
 
   def create?
@@ -13,7 +13,19 @@ class GarmentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    update?
+  end
+
+  def edit_shape?
+    update?
+  end
+
+  def edit_fabric?
+    update?
+  end
+
+  def edit_detail?
+    update?
   end
 
 

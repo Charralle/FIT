@@ -23,6 +23,7 @@
   transition : 0.5s ease-in-out;
   border-radius : 15px;
 }
+
 .container .card:hover {
  // height : 320px;
   width: 750px;
@@ -65,4 +66,21 @@
   position: absolute;
   bottom : -0px;
   right: 0px;
+}
+
+.container-fab-det {
+  position : relative;
+  display : flex;
+  align-items : flex-start;
+  justify-content : space-between;
+  //flex-warp : warp;
+}
+
+.container-fab-det .card-fab-det {
+  margin : 10px 10px;
+  padding : 20px 20px;
+  }
+
+.container-fab-det .card-fab-det .image {
+padding : 5px 10px;
 }

@@ -39,3 +39,27 @@
   opacity: 1;
   transition-delay: .10s;
 }
+
+.button-gold {
+  background-color: rgb(207, 189, 158);
+  margin-top: 5%;
+  font-family: 'Special Elite', cursive;
+  border-radius: 24px;
+  padding: 0px;
+  border-color: gray;
+  width : fit-content;
+  margin-left: 10px;
+}
+
+// .radio-button {
+//   text-align: center;
+.radio-button {
+  display: inline-block;
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked + label {
+    border: solid rgb(207, 189, 158) 5px;
+  }
+}
+// }

@@ -6,6 +6,11 @@ class Garment < ApplicationRecord
   belongs_to :fabric, optional: true
   belongs_to :detail, optional: true
 
+  # need to create a second method more close than this one
+  # and a second one for the image of the clothe to match with the chosen detail
+  # Here and now, we're sending on /edit_shape all image "garments/#{category.code}.jpg" instead of all shapes !
+  # So we have to chose fabrics twice :(
+
   def image_name
     if shape.nil?
       "garments/#{category.code}.jpg"
@@ -17,4 +22,14 @@ class Garment < ApplicationRecord
       "garments/#{category.code}_#{shape.code}_#{fabric.code}_#{detail.code}.png"
     end
   end
+
+  # def items_name
+  #  if shape.nil?
+  #    "shapes/#{category.code}_#{???.code}.jpg"
+  #  elsif fabric.nil?
+  #    "fabric_name/#{fabric.code}.jpg"
+  #  elsif detail.nil?
+  #    "details_name/#{detail.code}.jpg"
+  #  end
+  # end
 end

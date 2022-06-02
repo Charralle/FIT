@@ -2,13 +2,7 @@
 
 <div id='soustitre_new'>Choose a garment category!</div>
 
-
-  <%= simple_form_for @garment do |f| %>
-<%#   <%= f.input :category_id, as: :radio_buttons, collection: Category.all %>
-  <%= f.input :category, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
-
+<%= simple_form_for @garment do |f| %>
+  <%= f.input :category, input_html: { class: 'card_category' }, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
   <%= f.button :submit, class: "bouton_create_garment" %>
-
-  <% end %>
-
-<%# InspirationImage.all.map {|i| image_tag(i.url).html_safe }, %>
+<% end %>

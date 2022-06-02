@@ -2,16 +2,7 @@
 
 <h3>Choisissez une catégorie</h3>
 
-
-
 <%= simple_form_for @garment do |f| %>
-<%#   <%= f.input :category_id, as: :radio_buttons, collection: Category.all %>
-  <% Category.all.each do |category| %>
-    <label>
-      <%= f.radio_button(:category_id, category.id) %>
-      <%= image_tag("garments/#{category.code}", size: "250x250") %>
-    </label>
-  <% end %>
+  <%= f.input :category_id, input_html: { class: 'card_category' }, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
   <%= f.button :submit %>
 <% end %>
-

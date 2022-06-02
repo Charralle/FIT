@@ -2,11 +2,14 @@
   <div class="container">
     <div class="card">
       <div class="image">
-        <%= image_tag(@garment.image_name, size: "250x250") %>
+        <%= image_tag(@garment.image_name, size: "500x500") %>
       </div>
       <div class="content">
         <h3>This is your FIT</h3>
-        <p>DIn publishing and graphic design, Lorem ipsum is a placeholder text               commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
+        <p>Category: <%= @garment.category.name %></p>
+        <p>Shape: <%= @garment.shape.name %></p>
+        <p>Detail: <%= @garment.detail.name %></p>
       </div>
+      <%= render"shared/button" %>
     </div>
   </div>

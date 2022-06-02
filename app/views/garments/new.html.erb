@@ -9,8 +9,9 @@
   <% Category.all.each do |category| %>
     <label>
       <%= f.radio_button(:category_id, category.id) %>
-      <%= image_tag("categories/#{category.code}.jpg", size: "250x250") %>
+      <%= image_tag("garments/#{category.code}", size: "250x250") %>
     </label>
   <% end %>
   <%= f.button :submit %>
 <% end %>
+

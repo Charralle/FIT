@@ -16,9 +16,9 @@ Fabric.destroy_all
 Detail.destroy_all
 
 pants = Category.create({name: "Pant", code: "PANT"})
-shirt = Category.create({name: "Shirt", code: "SHIRT"})
+shirt = Category.create({name: "Top", code: "TOP"})
 dress = Category.create({name: "Dress", code: "DRESS"})
-overall = Category.create({name: "Overall", code: "OVER"})
+overall = Category.create({name: "Jacket", code: "JACKET"})
 
 shape = Shape.create({category_id: pants.id, name: "Cargo", description: "Pantalon Cargo, bien pratique", code: "CARGO"})
 Shape.create({category_id: pants.id, name: "Jean", description: "Pantalon Jean, bien classique", code: "JEAN"})

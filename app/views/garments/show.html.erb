@@ -1,27 +1,8 @@
 <h2>Votre vêtement</h2>
-
-
-
-  <ol>
-
-    <li><%= @garment.category.name %></li>
-    </div>
-
-    <li><%= @garment.shape.name %></li>
-
-    <li><%= @garment.fabric.name %></li>
-    <% if @garment.detail %>
-      <li><%= @garment.detail.name %></li>
-    <% end %>
-
-  </ol>
-
-<%# en dessous à supprimer %>
-  <body>
   <div class="container">
     <div class="card">
       <div class="image">
-        <%= image_tag "logo_FIT.png" %>
+        <%= image_tag(@garment.image_name, size: "250x250") %>
       </div>
       <div class="content">
         <h3>This is your FIT</h3>
@@ -29,6 +10,3 @@
       </div>
     </div>
   </div>
-</body>
-
-

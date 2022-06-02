@@ -5,6 +5,13 @@
 
 
 <%= simple_form_for @garment do |f| %>
-  <%= f.input :category_id, as: :radio_buttons, collection: Category.all %>
+<%#   <%= f.input :category_id, as: :radio_buttons, collection: Category.all %>
+  <% Category.all.each do |category| %>
+    <label>
+      <%= f.radio_button(:category_id, category.id) %>
+      <%= image_tag("garments/#{category.code}", size: "250x250") %>
+    </label>
+  <% end %>
   <%= f.button :submit %>
 <% end %>
+

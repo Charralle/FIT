@@ -1,6 +1,8 @@
 <h2>Choisissez la forme de votre vêtement</h2>
 
+<% selection = Shape.where("category_id = :category_id", { category_id: "#{@garment.category_id}" }) %>
+
 <%= simple_form_for @garment do |f| %>
-  <%= f.input :shape_id, required: true, as: :radio_buttons, collection: Shape.all%>
+  <%= f.input :shape_id, required: true, as: :radio_buttons, collection: selection%>
   <%= f.button :submit %>
 <% end %>

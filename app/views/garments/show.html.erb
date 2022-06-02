@@ -1,3 +1,34 @@
 <h2>Votre vêtement</h2>
 
-<%= image_tag(@garment.image_name, size: "250x250") %>
+
+
+  <ol>
+
+    <li><%= @garment.category.name %></li>
+    </div>
+
+    <li><%= @garment.shape.name %></li>
+
+    <li><%= @garment.fabric.name %></li>
+    <% if @garment.detail %>
+      <li><%= @garment.detail.name %></li>
+    <% end %>
+
+  </ol>
+
+<%# en dessous à supprimer %>
+  <body>
+  <div class="container">
+    <div class="card">
+      <div class="image">
+        <%= image_tag "logo_FIT.png" %>
+      </div>
+      <div class="content">
+        <h3>This is your FIT</h3>
+        <p>DIn publishing and graphic design, Lorem ipsum is a placeholder text               commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+

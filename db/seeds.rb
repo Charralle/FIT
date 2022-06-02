@@ -15,22 +15,22 @@ Shape.destroy_all
 Fabric.destroy_all
 Detail.destroy_all
 
-pants = Category.create({name: "Pant", code: "PANT"})
-shirt = Category.create({name: "Top", code: "TOP"})
-dress = Category.create({name: "Dress", code: "DRESS"})
-overall = Category.create({name: "Jacket", code: "JACKET"})
+pants = Category.create({name: "Pant", code: "pant"})
+shirt = Category.create({name: "Top", code: "top"})
+dress = Category.create({name: "Dress", code: "dress"})
+overall = Category.create({name: "Jacket", code: "jacket"})
 
-shape = Shape.create({category_id: pants.id, name: "Cargo", description: "Pantalon Cargo, bien pratique", code: "CARGO"})
-Shape.create({category_id: pants.id, name: "Jean", description: "Pantalon Jean, bien classique", code: "JEAN"})
-Shape.create({category_id: pants.id, name: "Baggie", description: "Pantalon Baggie, bien rasta", code: "BAGGIE"})
+shape = Shape.create({category_id: pants.id, name: "Cargo", description: "Pantalon Cargo, bien pratique", code: "cargo"})
+Shape.create({category_id: pants.id, name: "Jean", description: "Pantalon Jean, bien classique", code: "jean"})
+Shape.create({category_id: pants.id, name: "Baggie", description: "Pantalon Baggie, bien rasta", code: "baggie"})
 
-Fabric.create({shape_id: shape.id, name: "Coton Bleu", description: "100% Coton", code: "COTONBLEU"})
-Fabric.create({shape_id: shape.id, name: "Coton Noir", description: "100% Coton", code: "COTONNOIR"})
-Fabric.create({shape_id: shape.id, name: "Coton Rouge", description: "100% Coton", code: "COTONROUGE"})
+Fabric.create({shape_id: shape.id, name: "Coton Bleu", description: "100% Coton", code: "cotonbleu"})
+Fabric.create({shape_id: shape.id, name: "Coton Noir", description: "100% Coton", code: "cotonnoir"})
+Fabric.create({shape_id: shape.id, name: "Coton Rouge", description: "100% Coton", code: "cotonrouge"})
 
-Detail.create({shape_id: shape.id, name: "Detail 1", description: "Le Detail 1, donne un style incroyable", code: "DETAIL1"})
-Detail.create({shape_id: shape.id, name: "Detail 2", description: "Le Detail 1, donne un style incroyable", code: "DETAIL2"})
-Detail.create({shape_id: shape.id, name: "Detail 3", description: "Le Detail 1, donne un style incroyable", code: "DETAIL3"})
+Detail.create({shape_id: shape.id, name: "Detail 1", description: "Le Detail 1, donne un style incroyable", code: "detail1"})
+Detail.create({shape_id: shape.id, name: "Detail 2", description: "Le Detail 1, donne un style incroyable", code: "detail2"})
+Detail.create({shape_id: shape.id, name: "Detail 3", description: "Le Detail 1, donne un style incroyable", code: "detail3"})
 
 Garment.create( {user_id: 1, category_id: pants.id} )
 

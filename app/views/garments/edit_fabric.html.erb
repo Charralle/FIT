@@ -3,14 +3,25 @@
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
 <h3>Your fabric</h3>
-<%= image_tag(@garment.image_name, size: "250x250") %>
-
-<%= simple_form_for @garment do |f| %>
-  <% fabric_selection.each do |fabric| %>
-    <label>
-      <%= f.radio_button(:fabric_id, fabric.id) %>
-      <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "250x250") %>
-    </label>
-  <% end %>
-  <%= f.button :submit %>
-<% end %>
+<div class = "container-fab-det">
+  <div class = "card-fab-det">
+    <div class = "image">
+      <%= image_tag(@garment.image_name, size: "600x600") %>
+    </div>
+  </div>
+  <div class = "card-fab-det">
+      <%= simple_form_for @garment do |f| %>
+        <% fabric_selection.each do |fabric| %>
+            <div class="radio-button">
+              <%= f.radio_button(:fabric_id, fabric.id) %>
+              <label class="image" for="garment_fabric_id_<%= fabric.id %>">
+                  <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+              </label>
+            </div>
+        <% end %>
+        <div class = "button-gold">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+  </div>
+</div>

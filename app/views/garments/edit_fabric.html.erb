@@ -1,8 +1,13 @@
 <h3>Choisissez une matière</h3>
 
-<% selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
+<% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
 <%= simple_form_for @garment do |f| %>
-  <%= f.input :fabric_id, required: true, as: :radio_buttons, collection: selection %>
+  <% fabric_selection.each do |fabric| %>
+    <label>
+      <%= f.radio_button(:fabric_id, fabric.id) %>
+      <%= image_tag(@garment.image_name, size: "250x250") %>
+    </label>
+  <% end %>
   <%= f.button :submit %>
 <% end %>

@@ -14,7 +14,7 @@ body {
   width: 40px;height: 40px;
   border-radius: 20px;border: none;
   cursor: pointer;
-  background: rgb(235, 235, 235);
+  background: rgb(207, 189, 158);
   & + label .search-icon {    color: black    }
   &:hover {
     color: white;
@@ -30,7 +30,7 @@ body {
     cursor: text;
     width: 300px;
     border-radius: auto;
-    background: rgb(235, 235, 235);
+    background: rgb(207, 189, 158);
     color: black;
     & + label .search-icon {    color: black;    }
   }

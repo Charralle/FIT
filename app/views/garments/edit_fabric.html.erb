@@ -2,11 +2,14 @@
 
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
+<h3>Your fabric</h3>
+<%= image_tag(@garment.image_name, size: "250x250") %>
+
 <%= simple_form_for @garment do |f| %>
   <% fabric_selection.each do |fabric| %>
     <label>
       <%= f.radio_button(:fabric_id, fabric.id) %>
-      <%= image_tag(@garment.image_name, size: "250x250") %>
+      <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "250x250") %>
     </label>
   <% end %>
   <%= f.button :submit %>

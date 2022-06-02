@@ -1,12 +1,13 @@
 <h2>Vos vêtements</h2>
 
-
-<% @garments.each do |garment| %>
-  <li>
-    <% if asset_exists?(garment.image_name) %>
-      <%= link_to image_tag(garment.image_name, size: "250x250"), garment_path(garment) %>
-    <% else %>
-      <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
-    <% end %>
-  </li>
-<% end %>
+<div class="cards_index">
+  <% @garments.each do |garment| %>
+    <div class="card_index">
+      <% if asset_exists?(garment.image_name) %>
+        <%= link_to image_tag(garment.image_name, size: "250x250"), garment_path(garment) %>
+      <% else %>
+        <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

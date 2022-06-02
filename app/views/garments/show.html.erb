@@ -1,16 +1,15 @@
 <h2>Votre vêtement</h2>
-
-
-  <ol>
-
-    <li><%= @garment.category.name %></li>
+  <div class="container">
+    <div class="card">
+      <div class="image">
+        <%= image_tag(@garment.image_name, size: "500x500") %>
+      </div>
+      <div class="content">
+        <h3>This is your FIT</h3>
+        <p>Category: <%= @garment.category.name %></p>
+        <p>Shape: <%= @garment.shape.name %></p>
+        <p>Detail: <%= @garment.detail.name %></p>
+      </div>
+      <%= render"shared/button" %>
     </div>
-
-    <li><%= @garment.shape.name %></li>
-
-    <li><%= @garment.fabric.name %></li>
-    <% if @garment.detail %>
-      <li><%= @garment.detail.name %></li>
-    <% end %>
-
-  </ol>
+  </div>

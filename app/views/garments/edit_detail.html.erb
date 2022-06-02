@@ -1,9 +1,13 @@
 <h3>Choisissez un détail</h3>
 
-<% selection = Detail.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
-
+<% detail_selection = Detail.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
 <%= simple_form_for @garment do |f| %>
-  <%= f.input :detail_id, as: :radio_buttons, collection: selection %>
+  <% detail_selection.each do |detail| %>
+    <label>
+      <%= f.radio_button(:detail_id, detail.id) %>
+      <%= image_tag(@garment.image_name, size: "250x250") %>
+    </label>
+  <% end %>
   <%= f.button :submit %>
 <% end %>

@@ -1,2 +1,5 @@
 <%= category.name %>
-<div class= "card_category"><%= image_tag "garments/#{category.code}.jpg", width: 300 %></div>
+<div class= "card_category">
+  <p class= 'card_category_label'><%= category.name %></p>
+  <%= image_tag "categories/#{category.name.upcase}.jpg"%>
+</div>

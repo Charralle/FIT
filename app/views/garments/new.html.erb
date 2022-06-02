@@ -1,8 +1,8 @@
-<h2>Créez votre vêtement</h2>
+<div id='titre_new'>Create your Garment!</div>
 
-<h3>Choisissez une catégorie</h3>
+<div id='soustitre_new'>Choose a garment category!</div>
 
 <%= simple_form_for @garment do |f| %>
-  <%= f.input :category_id, input_html: { class: 'card_category' }, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
-  <%= f.button :submit %>
+  <%= f.input :category, input_html: { class: 'card_category' }, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
+  <%= f.button :submit, class: "bouton_create_garment" %>
 <% end %>

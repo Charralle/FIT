@@ -1,4 +1,90 @@
 // Specific CSS for your home-page
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #060608;
+  --color: #FAFAFA;
+}
+
+
+.container_home {
+  display: flex;
+  justify-content: center;
+  justify-items: left;
+  align-items: baseline;
+  color: var(--color);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(207, 189, 158);
+  border-radius: 30px;
+  margin-top: 100px;
+}
+
+.right {
+  text-align: left;
+  width: 100%;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 4rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+
+
+
 #hero-main{
   position: relative;
   padding-top: 2%;
@@ -168,4 +254,82 @@ color: #fff;
       opacity: 1;
       transform: translateY(0px);
   }
+}
+
+
+.wrapper_fit {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+}
+
+.card_fit {
+  grid-area: 1 / 1;
+  height: 100px;
+  width: 200px;
+  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 900;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+}
+
+.button_title {
+  font-size: 100px;
+}
+
+.card_fit .enclosed {
+  background: rgb(207, 189, 158) 5px;
+;
+  line-height: 1;
+  color: white;
+  padding: 0 5px;
+  display: inline-block;
+  transform: translate(-1px, 1px) scale(0.75);
+  transform-origin: right center;
+  font-family: ‘Rajdhani’, sans-serif;
+}
+
+.wrapper_fit:before {
+  --bw: 9px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #000;
+  box-sizing: content-box;
+}
+
+
+.wrapper_fit:hover > div,
+.wrapper_fit:hover:before {
+  transform: none;
+}
+
+
+.wrapper_fit > div,
+.wrapper_fit:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+}
+
+
+.div_fit {
+  display: grid;
+  place-items: center;
+  margin-top: 50px
 }

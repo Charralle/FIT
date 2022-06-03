@@ -31,4 +31,8 @@
 //pour mettre tout en bas le footer
 .content-wrapper {
   min-height: calc(100vh - 130px - 100px);
+  background-color: #rgb(187, 161, 117);;
+  border-radius: 30px;
+  margin: 5px;
+  justify-items: left;
 }

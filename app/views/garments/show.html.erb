@@ -10,6 +10,7 @@
         <p>Shape: <%= @garment.shape.name %></p>
         <p>Detail: <%= @garment.detail.name %></p>
         <%= render"shared/button", garment: @garment %>
+        <%= render"shared/button_selected", garment: @garment %>
       </div>
     </div>
   </div>

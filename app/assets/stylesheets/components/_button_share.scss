@@ -1,0 +1,43 @@
+.wrapper_share{
+  align-self: center;
+}
+
+.a_share{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.a_share span{
+  position: relative;
+  z-index: 2;
+}
+
+.a_share:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00ff51e2;
+  transition: all .35s;
+}
+
+.a_share:hover{
+  color: #fff;
+}
+
+.a_share:hover:after{
+  width: 100%;
+}

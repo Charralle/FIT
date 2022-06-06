@@ -28,6 +28,10 @@ class GarmentPolicy < ApplicationPolicy
     update?
   end
 
+  def edit_selected?
+    update?
+  end
+
 
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!

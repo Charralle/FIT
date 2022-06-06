@@ -12,10 +12,10 @@
       <%= image_tag "logo_FIT.png" , id:"logo-main",width: 100, alt: "Logo Thing main logo"%>
       <% end %>
       <ul class="navbar_link_shapes">
-        <li><a href="#">Pants</a></li>
-        <li><a href="#">Tops</a></li>
-        <li><a href="#">Dresses & Overalls</a></li>
-        <li><a href="#">Jackets</a></li>
+        <li> <%= link_to "Pants", garments_path(category: "pants"), data: {turbo_method: :post} %></li>
+        <li> <%= link_to "Tops", garments_path(category: "top"), data: {turbo_method: :post} %></li>
+        <li> <%= link_to "Dresses & Overalls ", garments_path(category: "dress"), data: {turbo_method: :post} %></li>
+        <li> <%= link_to "Jacket", garments_path(category: "jacket"), data: {turbo_method: :post} %></li>
       </ul>
     </div>
 

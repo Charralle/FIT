@@ -1,21 +1,28 @@
-  <div id='title_edit_shape'> Choisissez la forme de votre vêtement>
+  <div id='title_edit_shape'> Choose your shape !
   <% category_selection = @garment.category %>
   <% shape_selection = Shape.where("category_id = :category_id", { category_id: "#{@garment.category_id}" }) %>
   </div>
 
-  <div id='soustitre_new'>Your shape
+  <div id='soustitre_new'>The available shapes below
   </div>
 
-  <%= image_tag(@garment.image_name, size: "250x250") %>
+  <%#= image_tag(@garment.image_name, size: "250x250") %>
 
   <%= simple_form_for @garment do |f| %>
-    <% shape_selection.each do |shape| %>
-      <label>
-        <%= f.radio_button(:shape_id, shape.id) %>
-        <%= image_tag("shapes/#{category_selection.code}_#{shape.code}.png", size: "250x250") %>
-      </label>
-    <% end %>
+    <div class="card_align">
+
+      <%= f.input :shape_id, wrapper_html: { class: 'd-flex max-content flex-wrap' }, as: :radio_buttons, collection: shape_selection, label_method: lambda { |shape| render "garments/shape_label", shape: shape, category_selection: category_selection } %>
+
+      <div class="card_align1 form-check">
+          <%= image_tag "garments/#{@garment.category.code}_soldout_1.png", size: "250x250" %>
+      </div>
+
+      <div class="card_align1 form-check">
+        <%= image_tag "garments/#{@garment.category.code}_soldout_2.png", size: "250x250" %>
+      </div>
+    </div>
+
     <div class = "button-gold">
-    <%= f.button :submit %>
+      <%= f.button :submit %>
     </div>
   <% end %>

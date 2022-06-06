@@ -1,0 +1,14 @@
+//card edit aligner à l'horizontal
+.card_align {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_align1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.max-content {
+  width: max-content;
+}

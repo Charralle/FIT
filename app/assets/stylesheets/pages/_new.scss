@@ -20,8 +20,9 @@
   text-align: center;
 }
 
-
-#new_garment {
+// pour faire disparaitre les boutons, et rendre cliquable l'image
+#new_garment,
+.edit_garment {
   text-align: center;
 
   input[type="radio"] {

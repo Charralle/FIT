@@ -7,7 +7,11 @@ class GarmentsController < ApplicationController
   end
 
   def create
-    @garment = Garment.new(garment_params)
+    if params[:category]
+      @garment = Garment.new(category: Category.find_by(code: params[:category]))
+    else
+      @garment = Garment.new(garment_params)
+    end
     @garment.user_id = current_user.id
     authorize @garment
     if @garment.save!

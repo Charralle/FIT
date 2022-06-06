@@ -77,6 +77,18 @@ class GarmentsController < ApplicationController
     authorize @garment
   end
 
+  def edit_selected
+    @garment = Garment.find(params[:id])
+      if @garment.selected == true
+        @garment.selected = false
+      else
+        @garment.selected = true
+      end
+    authorize @garment
+    @garment.save
+    redirect_to garments_path()
+  end
+
   private
 
   def json_response

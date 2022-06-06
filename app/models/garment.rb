@@ -15,11 +15,11 @@ class Garment < ApplicationRecord
     if shape.nil?
       "garments/#{category.code}.jpg"
     elsif fabric.nil?
-      "garments/#{category.code}_#{shape.code}.jpg"
+      "garments/#{category.code}_#{shape.code}.png"
     elsif detail.nil?
-      "garments/#{category.code}_#{shape.code}_#{fabric.code}.jpg"
+      "garments/#{category.code}_#{shape.code}_#{fabric.code}.png"
     else
-      "garments/#{category.code}_#{shape.code}_#{fabric.code}_#{detail.code}.jpg"
+      "garments/#{category.code}_#{shape.code}_#{fabric.code}_#{detail.code}.png"
     end
   end
 

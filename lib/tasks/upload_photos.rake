@@ -41,7 +41,7 @@ end
 namespace :upload_shapes do
   desc "This rake upload all public photos to Cloudinary shapes"
   task :exec => :environment do
-    Dir.glob("#{Rails.root}/app/assets/images/shapes/*.jpg").each do |file|
+    Dir.glob("#{Rails.root}/app/assets/images/shapes/*.png").each do |file|
       Cloudinary::Uploader.upload(file, :use_filename => true, :unique_filename => false, :folder => "fit/shapes")
     end
     puts "zbi"

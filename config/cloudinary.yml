@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: fit-ts
+  api_key: '431545126448863'
+  api_secret: lQheEJK0JL3YaTBpvhsBXh4rz1w
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: fit-ts
+  api_key: '431545126448863'
+  api_secret: lQheEJK0JL3YaTBpvhsBXh4rz1w
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: fit-ts
+  api_key: '431545126448863'
+  api_secret: lQheEJK0JL3YaTBpvhsBXh4rz1w
+  enhance_image_tag: true
+  static_file_support: false

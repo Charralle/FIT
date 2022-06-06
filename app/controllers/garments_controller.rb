@@ -26,9 +26,15 @@ class GarmentsController < ApplicationController
       if garment_params.key?(:shape_id)
         redirect_to garment_edit_fabric_path(@garment)
       elsif garment_params.key?(:fabric_id)
-        redirect_to garment_edit_detail_path(@garment)
+        respond_to do |format|
+          format.json { render json: json_response }
+          format.html { redirect_to garment_edit_detail_path(@garment) }
+        end
       elsif garment_params.key?(:detail_id)
-        redirect_to garment_url(@garment)
+        respond_to do |format|
+          format.json { render json: json_response }
+          format.html { redirect_to garment_url(@garment) }
+        end
       end
     else
       render :new, status: :unprocessable_entity
@@ -68,6 +74,12 @@ class GarmentsController < ApplicationController
   end
 
   private
+
+  def json_response
+    {
+      html: ActionController::Base.helpers.image_tag(@garment.image_name, size: "600x600")
+    }
+  end
 
   def garment_params
     params.require(:garment).permit(:user_id, :category_id, :shape_id, :fabric_id, :detail_id, :selected)

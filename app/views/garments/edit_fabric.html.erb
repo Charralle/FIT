@@ -1,20 +1,20 @@
-<h3>Choisissez une matière</h3>
+<h3 id='titre_edit_fabric'>Choose a Fabric !</h3>
 
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
-<h3>Your fabric</h3>
-<div class = "container-fab-det">
+
+<div class = "container-fab-det" id="fabric-section">
   <div class = "card-fab-det">
-    <div class = "image">
+    <div class="image" id="image">
       <%= image_tag(@garment.image_name, size: "600x600") %>
     </div>
   </div>
-  <div class = "card-fab-det">
+  <div class="card-fab-det" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
       <%= simple_form_for @garment do |f| %>
         <% fabric_selection.each do |fabric| %>
             <div class="radio-button">
               <%= f.radio_button(:fabric_id, fabric.id) %>
-              <label class="image" for="garment_fabric_id_<%= fabric.id %>">
+              <label class="image" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
                   <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
               </label>
             </div>

@@ -15,7 +15,8 @@
             <div class="radio-button">
               <%= f.radio_button(:fabric_id, fabric.id) %>
               <label class="image" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
-                  <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+                  <%# <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+                  <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/fabric_name/fabric_#{fabric.code}.png", size: "100x100") %>
               </label>
             </div>
         <% end %>

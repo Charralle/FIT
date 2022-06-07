@@ -6,4 +6,3 @@
   <%= f.input :category_id, input_html: { class: 'card_category' }, as: :radio_buttons, collection: Category.all, label_method: lambda { |category| render "garments/category_label", category: category } %>
   <%= f.button :submit, class: "bouton_create_garment" %>
 <% end %>
-

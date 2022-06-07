@@ -6,4 +6,9 @@ module ApplicationHelper
       Rails.application.assets.find_asset(path) != nil
     end
   end
+
+  def url_valid?(url)
+    url = URI.parse(url) rescue false
+    url.kind_of?(URI::HTTP) || url.kind_of?(URI::HTTPS)
+  end
 end

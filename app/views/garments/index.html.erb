@@ -13,8 +13,8 @@ De là on peut le visualiser sur l'avatar ? Le vendre ? Le partager à quelqu'un
     <% if garment.selected == true %>
       <div class="card_index">
         <div class="m-2">
-          <% if asset_exists?(garment.image_name) %>
-            <%= link_to image_tag(garment.image_name, size: "250x250"), garment_path(garment) %>
+          <% if url_valid?("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}") %>
+            <%= link_to image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}", size: "250x375"), garment_path(garment) %>
           <% else %>
             <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
           <% end %>
@@ -38,8 +38,8 @@ De là on peut le visualiser sur l'avatar ? Le vendre ? Le partager à quelqu'un
     <% if garment.selected == nil %>
       <div class="card_index">
         <div>
-          <% if asset_exists?(garment.image_name) %>
-            <%= link_to image_tag(garment.image_name, size: "250x250"), garment_path(garment) %>
+          <% if url_valid?("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}") %>
+            <%= link_to image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}", size: "250x375"), garment_path(garment) %>
           <% else %>
             <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
           <% end %>

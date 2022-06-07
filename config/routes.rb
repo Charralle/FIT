@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get '/garments/:id/edit_detail', to: 'garments#edit_detail', as: :garment_edit_detail
   get '/garments/:id/edit_selected', to: 'garments#edit_selected', as: :garment_edit_selected
 
+  resources :orders, only: [:show, :create]
 
-
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

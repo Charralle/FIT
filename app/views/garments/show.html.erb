@@ -1,11 +1,11 @@
-<h2>Votre vêtement</h2>
+<h2 class='your_fit_title'> Your Unique Design ! </h2>
   <div class="container container_show">
     <div class="card">
       <div class="image">
         <%= image_tag(@garment.image_name, size: "500x500") %>
       </div>
       <div class="content">
-        <h3>This is your FIT</h3>
+        <h3 class='your_fit_subtitle'>This is your FIT</h3>
         <p>Category: <%= @garment.category.name %></p>
         <p>Shape: <%= @garment.shape.name %></p>
         <p>Detail: <%= @garment.detail.name %></p>

@@ -1,3 +1,10 @@
+.garment_index_title{
+  font-family: 'Rajdhani', sans-serif;
+  text-decoration: underline;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 // cards pour l'index garments
 .container {
   position : relative;
@@ -70,11 +77,10 @@
 }
 
 .container-fab-det {
-  position : relative;
-  display : flex;
-  align-items : flex-start;
-  justify-content : space-between;
-  //flex-warp : warp;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .container-fab-det .card-fab-det {

@@ -1,26 +1,26 @@
-<h3>Choisissez un détail</h3>
+<h3 id='titre_edit_detail'>Choose a detail</h3>
 
 <% detail_selection = Detail.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
-<h3>Your detail</h3>
+
 <div class = "container-fab-det" id="detail-section">
   <div class = "card-fab-det">
-    <div class="image" id="image">
-      <%= image_tag(@garment.image_name, size: "600x600") %>
+    <div class="image image_garment_simulation" id="image">
+      <%= image_tag(@garment.image_name, size: "500x750") %>
       </div>
   </div>
-  <div class="card-fab-det" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
+  <div class="card-fab-det width_for_square_container" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
     <%= simple_form_for @garment do |f| %>
       <% detail_selection.each do |detail| %>
         <div class="radio-button">
           <%= f.radio_button(:detail_id, detail.id) %>
           <label class="image" for="garment_detail_id_<%= detail.id %>" data-action="click->selection#select" data-selection-detail-id-param="<%= detail.id %>">
-            <%# <%= image_tag("detail_name/detail_#{detail.code}.jpg", size: "100x100") %>
+           <div class= detail_name_for_square> <%=detail.name %></div>
             <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/detail_name/detail_#{detail.code}.jpg", size: "100x100") %>
           </label>
         </div>
       <% end %>
-      <div class = "button-gold">
+      <div class = "button-detail">
         <%= f.button :submit %>
       </div>
     <% end %>

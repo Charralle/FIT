@@ -1,22 +1,22 @@
-<h3 id='titre_edit_fabric'>Choose a Fabric !</h3>
+<h3 id='titre_edit_fabric'> Choose a Fabric !</h3>
 
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
 
 <div class = "container-fab-det" id="fabric-section">
   <div class = "card-fab-det">
-    <div class="image" id="image">
-      <%# <%= image_tag(@garment.image_name, size: "600x600") %>
-      <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "600x900") %>
+    <div class="image image_garment_simulation" id="image">
+      <%# <%= image_tag(@garment.image_name, size: "500x750") %>
+      <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
     </div>
   </div>
-  <div class="card-fab-det" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
+  <div class="card-fab-det width_for_square_container" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
       <%= simple_form_for @garment do |f| %>
         <% fabric_selection.each do |fabric| %>
             <div class="radio-button">
               <%= f.radio_button(:fabric_id, fabric.id) %>
-              <label class="image" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
-                  <%# <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+              <label class="image image_fabric_square" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
+                <div class= fabric_name_for_square> <%=fabric.name %></div>
                   <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
               </label>
             </div>

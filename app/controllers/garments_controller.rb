@@ -93,7 +93,7 @@ class GarmentsController < ApplicationController
 
   def json_response
     {
-      html: ActionController::Base.helpers.image_tag(@garment.image_name, size: "600x600")
+      html: ActionController::Base.helpers.image_tag(@garment.image_name, size: "500x750")
     }
   end
 

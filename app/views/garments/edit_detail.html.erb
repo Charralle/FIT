@@ -1,8 +1,8 @@
-<h3>Choisissez un détail</h3>
+<h3>Choose a Detail</h3>
 
 <% detail_selection = Detail.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
-<h3>Your detail</h3>
+<%=<h3>Your detail</h3> %>
 <div class = "container-fab-det" id="detail-section">
   <div class = "card-fab-det">
     <div class="image" id="image">
@@ -22,7 +22,28 @@
         </div>
       <% end %>
       <div class = "button-gold">
-        <%= f.button :submit %>
+       <%# en dessous c'est pour mettre la  vague du bouton save %>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" hidden>
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+          <button class="blob-btn" type='submit'>
+            Save your Detail
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        <%# ancien bouton crée par le form <%= f.button :submit %>
       </div>
     <% end %>
   </div>

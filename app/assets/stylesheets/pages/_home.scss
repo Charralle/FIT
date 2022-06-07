@@ -14,7 +14,7 @@
 
 .container_home {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   justify-items: left;
   color: var(--color);
   font-size: 1.5rem;
@@ -27,6 +27,7 @@
 .div_container {
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
 }
 
 .right {
@@ -357,7 +358,6 @@ color: #fff;
   opacity: 0;
   padding-top: 40px;
   text-align: center;
-  transition: 1s opacity;
 }
 
 .active_carrousel {
@@ -365,16 +365,17 @@ color: #fff;
 }
 
 .p_carrousel {
-  font-family: sans-serif;
-  font-size: 13px;
-  color: #646566;
+  font-size: 30px;
+  color: white;
   line-height: 1.5em;
+  font-family: ‘Rajdhani’, sans-serif
 }
 
 .strong_carrousel {
   color: #fff;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 80px;
+  font-family: ‘Rajdhani’, sans-serif;
   line-height: 100px;
 }
 
@@ -384,18 +385,19 @@ color: #fff;
 }
 
 .li_carrousel {
-  animation: fader 10s;
+  opacity: 0;
+  animation: fader 10s linear forwards;
   margin-left: 100px;
 }
 
-.li_carrousel:nth-child(1) {
+.first_anim {
   animation-delay: 2s;
 }
 
-.li_carrousel:nth-child(2) {
+.second_anim {
   animation-delay: 4s;
 }
 
-.li_carrousel:nth-child(3) {
+.third_anim {
   animation-delay: 6s;
 }

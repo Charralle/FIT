@@ -57,7 +57,7 @@
   position : absolute;
   padding : 10px 15px;
   //color : #111;
-  text-align :end;
+  text-align: center;
   visibility : hidden;
   opacity : 0;
   top : 10px;
@@ -67,7 +67,7 @@
 
 .container .card:hover .content {
   //margin-left : 300px;
-  width: 300px;
+  width: 200px;
   visibility : visible;
   opacity : 1;
   transition-delay: 0.2s;

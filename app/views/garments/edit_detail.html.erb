@@ -6,7 +6,8 @@
 <div class = "container-fab-det" id="detail-section">
   <div class = "card-fab-det">
     <div class="image image_garment_simulation" id="image">
-      <%= image_tag(@garment.image_name, size: "500x750") %>
+      <%# <%= image_tag(@garment.image_name, size: "500x750") %>
+      <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
 
       </div>
   </div>

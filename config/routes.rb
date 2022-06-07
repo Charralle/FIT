@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/garments/:id/edit_fabric', to: 'garments#edit_fabric', as: :garment_edit_fabric
   get '/garments/:id/edit_detail', to: 'garments#edit_detail', as: :garment_edit_detail
   get '/garments/:id/edit_selected', to: 'garments#edit_selected', as: :garment_edit_selected
+  get '/avatar', to: 'garments#avatar', as: :garment_avatar
 
 
 

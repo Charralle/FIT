@@ -32,3 +32,198 @@
 .centrage {
   text-align: center;
 }
+
+
+$duration: 5s;
+@function romb($from, $to) {
+  @return (random($to - $from) + $from - 1%);
+}
+
+
+.container_barcode {
+  margin: 0 auto;
+  font-size: 0.5vh;
+  display: grid;
+  place-items: end;
+  transform: scale3d(0.5, 0.5, 1);
+}
+.barcode {
+  width: 94em;
+  height: 71em;
+  margin: 0 auto;
+  position: relative;
+}
+.barcode > div {
+  background-color: #fff;
+  float: left;
+  margin-right: 2em;
+  transform-origin: 0 0;
+}
+.barcode div:nth-child(1),
+.barcode div:nth-child(2),
+.barcode div:nth-child(15),
+.barcode div:nth-child(16),
+.barcode div:nth-child(29),
+.barcode div:nth-child(30) {
+  height: 45em;
+}
+.barcode div:nth-child(1),
+.barcode div:nth-child(2),
+.barcode div:nth-child(3),
+.barcode div:nth-child(5),
+.barcode div:nth-child(8),
+.barcode div:nth-child(10),
+.barcode div:nth-child(12),
+.barcode div:nth-child(13),
+.barcode div:nth-child(15),
+.barcode div:nth-child(16),
+.barcode div:nth-child(18),
+.barcode div:nth-child(19),
+.barcode div:nth-child(22),
+.barcode div:nth-child(25),
+.barcode div:nth-child(27),
+.barcode div:nth-child(28),
+.barcode div:nth-child(29),
+.barcode div:nth-child(30) {
+  width: 1em;
+}
+.barcode div:nth-child(3),
+.barcode div:nth-child(4),
+.barcode div:nth-child(5),
+.barcode div:nth-child(6),
+.barcode div:nth-child(7),
+.barcode div:nth-child(8),
+.barcode div:nth-child(9),
+.barcode div:nth-child(10),
+.barcode div:nth-child(11),
+.barcode div:nth-child(12),
+.barcode div:nth-child(13),
+.barcode div:nth-child(14),
+.barcode div:nth-child(17),
+.barcode div:nth-child(18),
+.barcode div:nth-child(19),
+.barcode div:nth-child(20),
+.barcode div:nth-child(21),
+.barcode div:nth-child(22),
+.barcode div:nth-child(23),
+.barcode div:nth-child(24),
+.barcode div:nth-child(25),
+.barcode div:nth-child(26),
+.barcode div:nth-child(27),
+.barcode div:nth-child(28) {
+  height: 40em;
+}
+.barcode div:nth-child(6),
+.barcode div:nth-child(7),
+.barcode div:nth-child(9),
+.barcode div:nth-child(11),
+.barcode div:nth-child(14),
+.barcode div:nth-child(23),
+.barcode div:nth-child(24) {
+  width: 2em;
+}
+.barcode div:nth-child(17),
+.barcode div:nth-child(20),
+.barcode div:nth-child(21),
+.barcode div:nth-child(26) {
+  width: 3em;
+}
+.barcode div:nth-child(4) {
+  width: 4em;
+}
+.barcode div:nth-child(1),
+.barcode div:nth-child(2),
+.barcode div:nth-child(3),
+.barcode div:nth-child(4),
+.barcode div:nth-child(6),
+.barcode div:nth-child(7),
+.barcode div:nth-child(8),
+.barcode div:nth-child(11),
+.barcode div:nth-child(13),
+.barcode div:nth-child(14),
+.barcode div:nth-child(15),
+.barcode div:nth-child(16),
+.barcode div:nth-child(18),
+.barcode div:nth-child(19),
+.barcode div:nth-child(22),
+.barcode div:nth-child(24),
+.barcode div:nth-child(25),
+.barcode div:nth-child(29),
+.barcode div:nth-child(30) {
+  margin-right: 1em;
+}
+.barcode div:nth-child(12),
+.barcode div:nth-child(17),
+.barcode div:nth-child(20),
+.barcode div:nth-child(21),
+.barcode div:nth-child(23),
+.barcode div:nth-child(26),
+.barcode div:nth-child(28) {
+  margin-right: 2em;
+}
+.barcode div:nth-child(5),
+.barcode div:nth-child(9),
+.barcode div:nth-child(10),
+.barcode div:nth-child(27) {
+  margin-right: 3em;
+}
+.barcode p {
+  color: #fff;
+  font: 8em/100% "OCRB";
+  position: absolute;
+  margin-top: 30px;
+  top: 4.2em;
+  right: 0.78em;
+  animation: fortyseven 5s infinite forwards;
+}
+@keyframes fortyseven {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    opacity: 1;
+  }
+}
+@for $i from 1 through 30 {
+  $grow-start: romb(1%, 30%);
+  $grow-end: romb(47%, 69%);
+  $fade-start: romb(72%, 82%);
+  $fade-end: romb(88%, 94%);
+
+  @keyframes bar-#{$i} {
+    0%,
+    #{$grow-start} {
+      transform: scaleY(0);
+    }
+    #{$grow-end} {
+      transform: scaleY(1);
+    }
+    #{$fade-start} {
+      opacity: 1;
+    }
+    #{$fade-end} {
+      opacity: 0;
+    }
+    99.5% {
+      transform: scaleY(1);
+      opacity: 0;
+    }
+    100% {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+
+  .barcode > div:nth-child(#{$i}) {
+    animation: bar-#{$i} $duration ease-out infinite forwards;
+  }
+}

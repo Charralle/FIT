@@ -8,7 +8,7 @@
     <div class="image image_garment_simulation" id="image">
       <%# <%= image_tag(@garment.image_name, size: "500x750") %>
       <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
-
+      <p>Amount: <%= humanized_money_with_symbol(@garment.price_cents) %></p>
       </div>
   </div>
   <div class="card-fab-det width_for_square_container" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">

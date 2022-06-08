@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SelectionController from "./selection_controller.js"
 application.register("selection", SelectionController)
+
+import ViewController from "./view_controller.js"
+application.register("view", ViewController)

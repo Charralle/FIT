@@ -7,8 +7,9 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
+        name: "#{garment.name}",
         images: ["https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}"],
-        amount: garment.price_cents,
+        amount: garment.price_garment,
         currency: 'eur',
         quantity: 1
       }],
@@ -18,10 +19,11 @@ class OrdersController < ApplicationController
 
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
+    authorize order
   end
 
   def show
     @order = current_user.orders.find(params[:id])
+    authorize @order
   end
-
 end

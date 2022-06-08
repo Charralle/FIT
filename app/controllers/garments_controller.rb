@@ -90,6 +90,10 @@ class GarmentsController < ApplicationController
     redirect_to garments_path()
   end
 
+  def avatar
+    @garments = policy_scope(Garment)
+  end
+
   private
 
   def json_response

@@ -32,6 +32,9 @@ class GarmentPolicy < ApplicationPolicy
     update?
   end
 
+  def avatar?
+    update?
+  end
 
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!

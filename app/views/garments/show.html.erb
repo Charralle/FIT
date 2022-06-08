@@ -51,6 +51,10 @@
           <div></div>
           <p>checkout</p>
         </div>
+        <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'garment_id', @garment.id %>
+            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <% end %>
       </div>
     </div>
   </div>

@@ -24,15 +24,28 @@ class Garment < ApplicationRecord
     end
   end
 
+  def name
+    if shape.nil?
+      "#{category.code}"
+    elsif fabric.nil?
+      "#{category.code} #{shape.code}"
+    elsif detail.nil?
+      "#{category.code} #{shape.code} #{fabric.code}"
+    else
+      "#{category.code} #{shape.code} #{fabric.code} #{detail.code}"
+    end
+  end
+
+
   def price_garment
     if category.name == "Pant"
-      self.price_cents = 150
+      self.price_cents = 15000
     elsif category.name == "Dress"
-      self.price_cents = 250
+      self.price_cents = 25000
     elsif category.name == "Jacket"
-      self.price_cents = 200
+      self.price_cents = 20000
     elsif category.name == "Top"
-      self.price_cents = 100
+      self.price_cents = 10000
     end
   end
   # def items_name

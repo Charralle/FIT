@@ -1,18 +1,49 @@
-<h2>Choose your garment shape!</h2>
+  <div id='title_edit_shape'> Choose your shape !
+  <% category_selection = @garment.category %>
+  <% shape_selection = Shape.where("category_id = :category_id", { category_id: "#{@garment.category_id}" }) %>
+  </div>
 
-<% category_selection = @garment.category %>
+  <div id='soustitre_new'>The available shapes below
+  </div>
 
-<% shape_selection = Shape.where("category_id = :category_id", { category_id: "#{@garment.category_id}" }) %>
+  <%#= image_tag(@garment.image_name, size: "250x250") %>
 
-<h3>Your shape</h3>
-<%= image_tag(@garment.image_name, size: "250x250") %>
+  <%= simple_form_for @garment do |f| %>
+    <div class="card_align">
 
-<%= simple_form_for @garment do |f| %>
-  <% shape_selection.each do |shape| %>
-    <label>
-      <%= f.radio_button(:shape_id, shape.id) %>
-      <%= image_tag("shapes/#{category_selection.code}_#{shape.code}.png", size: "250x250") %>
-    </label>
+      <%= f.input :shape_id, wrapper_html: { class: 'd-flex max-content flex-wrap' }, as: :radio_buttons, collection: shape_selection, label_method: lambda { |shape| render "garments/shape_label", shape: shape, category_selection: category_selection } %>
+
+      <div class="card_align1 form-check">
+          <%= image_tag "garments/#{@garment.category.code}_soldout_1.png", size: "250x375" %>
+      </div>
+
+      <div class="card_align1 form-check">
+        <%= image_tag "garments/#{@garment.category.code}_soldout_2.png", size: "250x375" %>
+      </div>
+    </div>
+
+    <div class = "button-gold">
+      <%# en dessous c'est pour mettre la  vague du bouton save %>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" hidden>
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+          <button class="blob-btn" type='submit'>
+            Save your Shape
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+      <%# ancien bouton crée par le form  <%= f.button :submit %>
+    </div>
   <% end %>
-  <%= f.button :submit %>
-<% end %>

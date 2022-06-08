@@ -41,14 +41,16 @@
 }
 
 .button-gold {
-  background-color: rgb(207, 189, 158);
+  //background-color: rgb(207, 189, 158);
   margin-top: 5%;
   font-family: 'Special Elite', cursive;
   border-radius: 24px;
   padding: 0px;
   border-color: gray;
   width : fit-content;
-  margin-left: 10px;
+  margin-left: 500px;
+  border-color: grey;
+  //border-style: solid;
 }
 
 // .radio-button {
@@ -63,3 +65,17 @@
   }
 }
 // }
+
+.button-gold-edit-detail {
+  //background-color: rgb(207, 189, 158);
+  margin-top: 55%;
+  font-family: 'Special Elite', cursive;
+  border-radius: 24px;
+  padding: 0px;
+  border-color: gray;
+  width : fit-content;
+  margin-left: 50px;
+  border-color: grey;
+  //border-style: solid;
+  font-weight: 200;
+}

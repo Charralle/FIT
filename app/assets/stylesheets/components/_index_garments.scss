@@ -1,3 +1,10 @@
+.garment_index_title{
+  font-family: 'Rajdhani', sans-serif;
+  text-decoration: underline;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 // cards pour l'index garments
 .container {
   position : relative;
@@ -16,6 +23,7 @@
   height : 550px;
   background-color : #fff;
   margin : 30px 10px;
+  margin-bottom: 20px;
   padding : 20px 20px;
   display : flex;
   flex-direction : column;
@@ -49,31 +57,30 @@
   position : absolute;
   padding : 10px 15px;
   //color : #111;
-  text-align :end;
+  text-align: center;
   visibility : hidden;
   opacity : 0;
-  bottom : -0px;
+  top : 10px;
   transition : 0.6s ease-in-out;
 
 }
 
 .container .card:hover .content {
   //margin-left : 300px;
-  width: 300px;
+  width: 200px;
   visibility : visible;
   opacity : 1;
   transition-delay: 0.2s;
   position: absolute;
-  bottom : -0px;
+  top: 10px;
   right: 0px;
 }
 
 .container-fab-det {
-  position : relative;
-  display : flex;
-  align-items : flex-start;
-  justify-content : space-between;
-  //flex-warp : warp;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .container-fab-det .card-fab-det {

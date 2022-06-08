@@ -1,26 +1,50 @@
-<h3>Choisissez une matière</h3>
+<h3 id='titre_edit_fabric'> Choose a Fabric !</h3>
 
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
-<h3>Your fabric</h3>
-<div class = "container-fab-det">
+
+<div class = "container-fab-det" id="fabric-section">
   <div class = "card-fab-det">
-    <div class = "image">
-      <%= image_tag(@garment.image_name, size: "600x600") %>
+    <div class="image image_garment_simulation" id="image">
+      <%# <%= image_tag(@garment.image_name, size: "500x750") %>
+      <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
+      <p>Amount: <%= humanized_money_with_symbol(@garment.price_garment / 100) %></p>
     </div>
   </div>
-  <div class = "card-fab-det">
+  <div class="card-fab-det width_for_square_container" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
       <%= simple_form_for @garment do |f| %>
         <% fabric_selection.each do |fabric| %>
             <div class="radio-button">
               <%= f.radio_button(:fabric_id, fabric.id) %>
-              <label class="image" for="garment_fabric_id_<%= fabric.id %>">
-                  <%= image_tag("fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+              <label class="image image_fabric_square" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
+                <div class= fabric_name_for_square> <%=fabric.name %></div>
+                  <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
               </label>
             </div>
         <% end %>
-        <div class = "button-gold">
-          <%= f.button :submit %>
+        <div class = "button-fabric">
+        <%# en dessous c'est pour mettre la  vague du bouton save %>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" hidden>
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+          <button class="blob-btn" type='submit'>
+            Save your Fabric
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+         <%# ancien bouton crée par le form <%= f.button :submit %>
         </div>
       <% end %>
   </div>

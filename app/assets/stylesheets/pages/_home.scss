@@ -12,18 +12,29 @@
 }
 
 
-.container {
+.container_home {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   justify-items: left;
-  align-items: baseline;
   color: var(--color);
   font-size: 1.5rem;
   display: flex;
-  flex-direction: column;
   background-color: rgb(207, 189, 158);
   border-radius: 30px;
-  margin-top: 100px;
+  margin-top: 35px;
+}
+
+.div_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.div_home {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 .right {
@@ -278,6 +289,7 @@ color: #fff;
   text-transform: uppercase;
   font-size: 60px;
   font-weight: 900;
+  font-family: 'Rajdhani', sans-serif;
   backface-visibility: hidden;
   box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
 }
@@ -295,7 +307,7 @@ color: #fff;
   display: inline-block;
   transform: translate(-1px, 1px) scale(0.75);
   transform-origin: right center;
-  font-family: ‘Rajdhani’, sans-serif;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .wrapper_fit:before {
@@ -330,6 +342,915 @@ color: #fff;
 
 .div_fit {
   display: grid;
-  place-items: center;
-  margin-top: 50px
+  place-items: end;
+  margin-bottom: 15px;
 }
+
+.div_button {
+  display: flex;
+}
+
+.ul_carrousel {
+  width: 800px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.div_carrousel {
+  display: flex;
+}
+
+.ul_carrousel > .li_carrousel {
+  width: 25%;
+  position: absolute;
+  padding: 20px;
+  height: 200px;
+  opacity: 0;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.active_carrousel {
+  opacity: 1;
+}
+
+.p_carrousel {
+  font-size: 30px;
+  color: white;
+  line-height: 1.5em;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.strong_carrousel {
+  color: #fff;
+  font-weight: 700;
+  font-size: 80px;
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 100px;
+}
+
+@keyframes fader {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.li_carrousel {
+  opacity: 0;
+  animation: fader 6s linear forwards;
+  margin-left: 100px;
+}
+
+.first_anim {
+  animation-delay: 2s;
+}
+
+.second_anim {
+  animation-delay: 4s;
+}
+
+.third_anim {
+  animation-delay: 6s;
+}
+
+
+%animation-default {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+@mixin carousel($items, $animation: 'default') {
+  .carousel {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    outline-color: black;
+    outline-style: dashed;
+
+    > input[type="radio"] {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      top: 0;
+
+      &:checked {
+        ~ .carousel__items .carousel__item,
+        ~ .carousel__prev > label,
+        ~ .carousel__next > label {
+          opacity: 0;
+        }
+      }
+
+      @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+          &:checked {
+            ~ .carousel__items .carousel__item {
+              @if $animation == 'default' {
+                &:nth-child(#{$i}) {
+                  opacity: 1;
+                }
+              }
+            }
+
+            ~ .carousel__prev {
+              > label {
+                @if $i == 1 {
+                  &:nth-child(#{$items}) {
+                    @extend %animation-default;
+                  }
+                } @else if $i == $items {
+                  &:nth-child(#{$items - 1}) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i - 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__next {
+              > label {
+                @if $i == $items {
+                  &:nth-child(1) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i + 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__nav {
+              > label {
+                &:nth-child(#{$i}) {
+                  background: rgb(187, 161, 117);
+                  cursor: default;
+                  pointer-events: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__items {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      height: 600px;
+      position: relative;
+    }
+
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: opacity 2s;
+      -webkit-transition: opacity 2s;
+
+      img {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    &__prev,
+    &__next {
+      > label {
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        opacity: 0;
+        z-index: 2;
+
+        &:hover,
+        &:focus {
+          opacity: .5 !important;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: inherit;
+          height: inherit;
+        }
+
+        &:before {
+          background: linear-gradient(to top, black 0%, black 10%, rgba(51, 51, 51, 0) 10%),
+                      linear-gradient(to left, black 0%, black 10%, rgba(51, 51, 51, 0) 10%);
+          width: 60%;
+          height: 60%;
+          top: 20%;
+        }
+      }
+    }
+
+    &__prev {
+      > label {
+        left: 2%;
+
+        &:before {
+          left: 35%;
+          top: 20%;
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+    }
+
+    &__next {
+      > label {
+        right: 2%;
+
+        &:before {
+          left: 10%;
+          transform: rotate(315deg);
+          -webkit-transform: rotate(315deg);
+        }
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      bottom: 3%;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+
+      > label {
+        border: 1px solid black;
+        display: inline-block;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 .125%;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.container_carousel {
+  width: 500px;
+  height: 750px;
+  margin-left: 48px;
+}
+
+@include carousel(5);
+
+
+section {
+  padding: 20px;
+}
+
+.hero {
+  font-size: clamp(40px, 10vw, 100px);
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 1;
+  display: inline-block;
+  color: black;
+  z-index: 2;
+  letter-spacing: 10px;
+
+  /* Bright things in dark environments usually cast that light, giving off a glow */
+  filter: drop-shadow(0 1px 3px);
+}
+
+.demo {
+  height: 100px;
+  background: #fff;
+}
+
+.layers {
+  position: relative;
+}
+
+.layers::before,
+.layers::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 110%;
+  z-index: -1;
+}
+
+.layers::before {
+  top: 10px;
+  left: 15px;
+  color: #e0287d;
+}
+
+.layers::after {
+  top: 5px;
+  left: -10px;
+  color: #1bc7fb;
+}
+
+.single-path {
+  clip-path: polygon(
+    0% 12%,
+    53% 12%,
+    53% 26%,
+    25% 26%,
+    25% 86%,
+    31% 86%,
+    31% 0%,
+    53% 0%,
+    53% 84%,
+    92% 84%,
+    92% 82%,
+    70% 82%,
+    70% 29%,
+    78% 29%,
+    78% 65%,
+    69% 65%,
+    69% 66%,
+    77% 66%,
+    77% 45%,
+    85% 45%,
+    85% 26%,
+    97% 26%,
+    97% 28%,
+    84% 28%,
+    84% 34%,
+    54% 34%,
+    54% 89%,
+    30% 89%,
+    30% 58%,
+    83% 58%,
+    83% 5%,
+    68% 5%,
+    68% 36%,
+    62% 36%,
+    62% 1%,
+    12% 1%,
+    12% 34%,
+    60% 34%,
+    60% 57%,
+    98% 57%,
+    98% 83%,
+    1% 83%,
+    1% 53%,
+    91% 53%,
+    91% 84%,
+    8% 84%,
+    8% 83%,
+    4% 83%
+  );
+}
+
+.paths {
+  animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+  0% {
+    clip-path: polygon(
+      0% 43%,
+      83% 43%,
+      83% 22%,
+      23% 22%,
+      23% 24%,
+      91% 24%,
+      91% 26%,
+      18% 26%,
+      18% 83%,
+      29% 83%,
+      29% 17%,
+      41% 17%,
+      41% 39%,
+      18% 39%,
+      18% 82%,
+      54% 82%,
+      54% 88%,
+      19% 88%,
+      19% 4%,
+      39% 4%,
+      39% 14%,
+      76% 14%,
+      76% 52%,
+      23% 52%,
+      23% 35%,
+      19% 35%,
+      19% 8%,
+      36% 8%,
+      36% 31%,
+      73% 31%,
+      73% 16%,
+      1% 16%,
+      1% 56%,
+      50% 56%,
+      50% 8%
+    );
+  }
+
+  5% {
+    clip-path: polygon(
+      0% 29%,
+      44% 29%,
+      44% 83%,
+      94% 83%,
+      94% 56%,
+      11% 56%,
+      11% 64%,
+      94% 64%,
+      94% 70%,
+      88% 70%,
+      88% 32%,
+      18% 32%,
+      18% 96%,
+      10% 96%,
+      10% 62%,
+      9% 62%,
+      9% 84%,
+      68% 84%,
+      68% 50%,
+      52% 50%,
+      52% 55%,
+      35% 55%,
+      35% 87%,
+      25% 87%,
+      25% 39%,
+      15% 39%,
+      15% 88%,
+      52% 88%
+    );
+  }
+
+  30% {
+    clip-path: polygon(
+      0% 53%,
+      93% 53%,
+      93% 62%,
+      68% 62%,
+      68% 37%,
+      97% 37%,
+      97% 89%,
+      13% 89%,
+      13% 45%,
+      51% 45%,
+      51% 88%,
+      17% 88%,
+      17% 54%,
+      81% 54%,
+      81% 75%,
+      79% 75%,
+      79% 76%,
+      38% 76%,
+      38% 28%,
+      61% 28%,
+      61% 12%,
+      55% 12%,
+      55% 62%,
+      68% 62%,
+      68% 51%,
+      0% 51%,
+      0% 92%,
+      63% 92%,
+      63% 4%,
+      65% 4%
+    );
+  }
+
+  45% {
+    clip-path: polygon(
+      0% 33%,
+      2% 33%,
+      2% 69%,
+      58% 69%,
+      58% 94%,
+      55% 94%,
+      55% 25%,
+      33% 25%,
+      33% 85%,
+      16% 85%,
+      16% 19%,
+      5% 19%,
+      5% 20%,
+      79% 20%,
+      79% 96%,
+      93% 96%,
+      93% 50%,
+      5% 50%,
+      5% 74%,
+      55% 74%,
+      55% 57%,
+      96% 57%,
+      96% 59%,
+      87% 59%,
+      87% 65%,
+      82% 65%,
+      82% 39%,
+      63% 39%,
+      63% 92%,
+      4% 92%,
+      4% 36%,
+      24% 36%,
+      24% 70%,
+      1% 70%,
+      1% 43%,
+      15% 43%,
+      15% 28%,
+      23% 28%,
+      23% 71%,
+      90% 71%,
+      90% 86%,
+      97% 86%,
+      97% 1%,
+      60% 1%,
+      60% 67%,
+      71% 67%,
+      71% 91%,
+      17% 91%,
+      17% 14%,
+      39% 14%,
+      39% 30%,
+      58% 30%,
+      58% 11%,
+      52% 11%,
+      52% 83%,
+      68% 83%
+    );
+  }
+
+  76% {
+    clip-path: polygon(
+      0% 26%,
+      15% 26%,
+      15% 73%,
+      72% 73%,
+      72% 70%,
+      77% 70%,
+      77% 75%,
+      8% 75%,
+      8% 42%,
+      4% 42%,
+      4% 61%,
+      17% 61%,
+      17% 12%,
+      26% 12%,
+      26% 63%,
+      73% 63%,
+      73% 43%,
+      90% 43%,
+      90% 67%,
+      50% 67%,
+      50% 41%,
+      42% 41%,
+      42% 46%,
+      50% 46%,
+      50% 84%,
+      96% 84%,
+      96% 78%,
+      49% 78%,
+      49% 25%,
+      63% 25%,
+      63% 14%
+    );
+  }
+
+  90% {
+    clip-path: polygon(
+      0% 41%,
+      13% 41%,
+      13% 6%,
+      87% 6%,
+      87% 93%,
+      10% 93%,
+      10% 13%,
+      89% 13%,
+      89% 6%,
+      3% 6%,
+      3% 8%,
+      16% 8%,
+      16% 79%,
+      0% 79%,
+      0% 99%,
+      92% 99%,
+      92% 90%,
+      5% 90%,
+      5% 60%,
+      0% 60%,
+      0% 48%,
+      89% 48%,
+      89% 13%,
+      80% 13%,
+      80% 43%,
+      95% 43%,
+      95% 19%,
+      80% 19%,
+      80% 85%,
+      38% 85%,
+      38% 62%
+    );
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    clip-path: none;
+  }
+}
+
+.movement {
+  /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+  position: relative;
+  animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+  0% {
+    top: 0px;
+    left: -20px;
+  }
+
+  15% {
+    top: 10px;
+    left: 10px;
+  }
+
+  60% {
+    top: 5px;
+    left: -10px;
+  }
+
+  75% {
+    top: -5px;
+    left: 20px;
+  }
+
+  100% {
+    top: 10px;
+    left: 5px;
+  }
+}
+
+.opacity {
+  animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.1;
+  }
+
+  5% {
+    opacity: 0.7;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  45% {
+    opacity: 0.6;
+  }
+
+  76% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    opacity: 0;
+  }
+}
+
+.font {
+  animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+  0% {
+    font-weight: 100;
+    color: #e0287d;
+    filter: blur(3px);
+  }
+
+  20% {
+    font-weight: 500;
+    color: #fff;
+    filter: blur(0);
+  }
+
+  50% {
+    font-weight: 300;
+    color: #1bc7fb;
+    filter: blur(2px);
+  }
+
+  60% {
+    font-weight: 700;
+    color: #fff;
+    filter: blur(0);
+  }
+
+  90% {
+    font-weight: 500;
+    color: #e0287d;
+    filter: blur(6px);
+  }
+}
+
+.glitch span {
+  animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 8s step-end infinite, movement 10s step-end infinite;
+}
+
+.glitch::after {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 7s step-end infinite, movement 8s step-end infinite;
+}
+
+.hero-container {
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.line-1{
+  border-right: 2px solid rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Courier";
+  font-size: 25px;
+}
+
+.line-2{
+  border-right: 2px solid rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Courier";
+  font-size: 25px;
+  text-align: center;
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 22em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: transparent;}
+to{border-right-color: transparent;}
+}
+
+.anim-typewriter2{
+  animation: typewriter 4s steps(44) 5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+             text-align: right;
+  }
+  @keyframes typewriter{
+  from{width: 0;}
+  to{width: 22em;}
+  }
+  @keyframes blinkTextCursor{
+  from{border-right-color: transparent;}
+  to{border-right-color: transparent;}
+  }
+
+  .anim-typewriter3{
+    animation: typewriter 4s steps(44) 8s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter{
+    from{width: 0;}
+    to{width: 22em;}
+    }
+    @keyframes blinkTextCursor{
+    from{border-right-color: transparent;}
+    to{border-right-color: transparent;}
+    }
+
+    .anim-typewriter4{
+      animation: typewriter 4s steps(44) 11s 1 normal both,
+                 blinkTextCursor 500ms steps(44) infinite normal;
+                 text-align: center;
+      }
+      @keyframes typewriter{
+      from{width: 0;}
+      to{width: 22em;}
+      }
+      @keyframes blinkTextCursor{
+      from{border-right-color: transparent;}
+      to{border-right-color: transparent;}
+      }
+      .anim-typewriter5{
+        animation: typewriter 4s steps(44) 14s 1 normal both,
+                   blinkTextCursor 500ms steps(44) infinite normal;
+                   text-align: center;
+        }
+        @keyframes typewriter{
+        from{width: 0;}
+        to{width: 22em;}
+        }
+        @keyframes blinkTextCursor{
+        from{border-right-color: transparent;}
+        to{border-right-color: transparent;}
+        }
+
+        .anim-typewriter6{
+          animation: typewriter 4s steps(44) 17s 1 normal both,
+                     blinkTextCursor 500ms steps(44) infinite normal;
+                     text-align: center;
+          }
+          @keyframes typewriter{
+          from{width: 0;}
+          to{width: 22em;}
+          }
+          @keyframes blinkTextCursor{
+          from{border-right-color: transparent;}
+          to{border-right-color: transparent;}
+          }
+
+          .anim-typewriter7{
+            animation: typewriter 4s steps(44) 20s 1 normal both,
+                       blinkTextCursor 500ms steps(44) infinite normal;
+                       text-align: center;
+            }
+            @keyframes typewriter{
+            from{width: 0;}
+            to{width: 22em;}
+            }
+            @keyframes blinkTextCursor{
+            from{border-right-color: transparent;}
+            to{border-right-color: transparent;}
+            }
+
+            .anim-typewriter8{
+              animation: typewriter 4s steps(44) 23s 1 normal both,
+                         blinkTextCursor 500ms steps(44) normal;
+                         text-align: center;
+              }
+              @keyframes typewriter{
+              from{width: 0;}
+              to{width: 22em;}
+              }
+              @keyframes blinkTextCursor{
+              from{border-right-color: transparent;}
+              to{border-right-color: transparent;}
+              }
+
+              .anim-typewriter9{
+                animation: typewriter 4s steps(44) 26s 1 normal both,
+                           blinkTextCursor 500ms steps(44) normal;
+                           text-align: center;
+                }
+                @keyframes typewriter{
+                from{width: 0;}
+                to{width: 22em;}
+                }
+                @keyframes blinkTextCursor{
+                from{border-right-color: transparent;}
+                to{border-right-color: transparent;}
+                }

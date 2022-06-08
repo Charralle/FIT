@@ -1,24 +1,113 @@
-
-<div class="container">
-  Create
-  <div class="stack" style="--stacks: 3;">
-    <span style="--index: 0;">YOUR</span>
-    <span style="--index: 1;">YOUR</span>
-    <span style="--index: 2;">YOUR</span>
+<div class="hero-container">
+    <div class="environment"></div>
+    <h2 class="hero glitch layers" data-text="Find the perfect FIT"><span>Find the perfect FIT</span></h2>
   </div>
-  <span class="right">Clothes</span>
+
+
+<div class="container container_home">
+  <div class="div_container">
+
+    Create
+    <div class="stack" style="--stacks: 3;">
+      <span style="--index: 0;">YOUR</span>
+      <span style="--index: 1;">YOUR</span>
+      <span style="--index: 2;">YOUR</span>
+    </div>
+    <span class="right">Clothes</span>
+
+</div>
+  <div class="div_carrousel">
+    <ul class="ul_carrousel" id="c">
+      <div class="div_container">
+        <li class="li_carrousel first_anim"><p class="p_carrousel"><strong class="strong_carrousel">1</strong></p><p class="p_carrousel">Chose your shape</p></li>
+      </div>
+      <div class="div_container">
+        <li class="li_carrousel second_anim"><p class="p_carrousel"><strong class="strong_carrousel">2</strong></p><p class="p_carrousel">Pick your fabric</p></li>
+      </div>
+      <div class="div_container">
+        <li class="li_carrousel third_anim"><p class="p_carrousel"><strong class="strong_carrousel">3</strong></p><p class="p_carrousel">Customize details</p></li>
+      </div>
+    </ul>
+  </div>
 </div>
 
-<a class="div_fit" href="/garments/new">
-  <div class="wrapper_fit">
-    <div class="card_fit">
-      <h1 class="button_title">
-        <span class="enclosed">FIT</span>
-      </h1>
+<div class="div_home">
+  <div class="container_carousel">
+    <div class="carousel">
+      <input type="radio" id="carousel-1" name="carousel[]" checked>
+      <input type="radio" id="carousel-2" name="carousel[]">
+      <input type="radio" id="carousel-3" name="carousel[]">
+      <input type="radio" id="carousel-4" name="carousel[]">
+      <input type="radio" id="carousel-5" name="carousel[]">
+      <ul class="carousel__items">
+        <li class="carousel__item"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garments.sample.image_name}", size: "500x750") %></li>
+        <li class="carousel__item"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garments.sample.image_name}", size: "500x750") %></li>
+        <li class="carousel__item"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garments.sample.image_name}", size: "500x750") %></li>
+        <li class="carousel__item"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garments.sample.image_name}", size: "500x750") %></li>
+        <li class="carousel__item"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garments.sample.image_name}", size: "500x750") %></li>
+      </ul>
+      <div class="carousel__prev">
+        <label for="carousel-1"></label>
+        <label for="carousel-2"></label>
+        <label for="carousel-3"></label>
+        <label for="carousel-4"></label>
+        <label for="carousel-5"></label>
+      </div>
+      <div class="carousel__next">
+        <label for="carousel-1"></label>
+        <label for="carousel-2"></label>
+        <label for="carousel-3"></label>
+        <label for="carousel-4"></label>
+        <label for="carousel-5"></label>
+      </div>
+      <div class="carousel__nav">
+        <label for="carousel-1"></label>
+        <label for="carousel-2"></label>
+        <label for="carousel-3"></label>
+        <label for="carousel-4"></label>
+        <label for="carousel-5"></label>
+      </div>
     </div>
   </div>
-</a>
-
+  <div>
+    <br>
+    <h3 class="line-1 anim-typewriter">-Tired of fast fashion ?</h3>
+    <br>
+    <h3 class="line-1 anim-typewriter2">-You're right !</h3>
+    <br>
+    <br>
+    <h3 class="line-2 anim-typewriter3"><strong> For you, we create tough garments</strong></h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter4">-Perfectly adapted to your fit</h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter5">-Handmade, produced in France</h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter6">-With a large choice of shapes</h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter7">-Some of the finest tissues</h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter8">-A tons of unique details  </h3>
+    <br>
+    <br>
+    <h3 class="line-1 anim-typewriter9"><strong>Start your bespoke experience !</strong></h3>
+  </div>
+  <div class="div_button">
+    <a class="div_fit" href="/garments/new">
+      <div class="wrapper_fit">
+        <div class="card_fit">
+          <h1 class="button_title">
+            <span class="enclosed">FIT</span>
+          </h1>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 
 
 

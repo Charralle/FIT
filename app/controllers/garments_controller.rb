@@ -13,6 +13,7 @@ class GarmentsController < ApplicationController
       @garment = Garment.new(garment_params)
     end
     @garment.user_id = current_user.id
+    @garment.price_garment
     authorize @garment
     if @garment.save!
       redirect_to garment_edit_shape_path(@garment)

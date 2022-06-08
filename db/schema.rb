@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_142641) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_154056) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_142641) do
     t.integer "shape_id"
     t.integer "fabric_id"
     t.integer "detail_id"
+    t.integer "price_cents", default: 0, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "garment_id", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garment_id"], name: "index_orders_on_garment_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "shapes", force: :cascade do |t|
@@ -71,4 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_142641) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "garments"
+  add_foreign_key "orders", "users"
 end

@@ -343,7 +343,8 @@ color: #fff;
 .div_fit {
   display: grid;
   place-items: end;
-  margin-bottom: 15px;
+  margin-top: 320px;
+  margin-bottom: 105px;
 }
 
 .div_button {
@@ -1132,125 +1133,215 @@ section {
 }
 
 /* Animation */
-.anim-typewriter{
-animation: typewriter 4s steps(44) 1s 1 normal both,
-           blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-from{width: 0;}
-to{width: 22em;}
-}
-@keyframes blinkTextCursor{
-from{border-right-color: transparent;}
-to{border-right-color: transparent;}
-}
+// .imessage {
+//   background-color: #fff;
+//   border: 1px solid #e5e5ea;
+//   border-radius: 0.25rem;
+//   display: flex;
+//   flex-direction: column;
+//   font-family: "SanFrancisco";
+//   font-size: 1.25rem;
+//   margin: 0 auto 1rem;
+//   max-width: 600px;
+//   padding: 0.5rem 1.5rem;
+// }
 
-.anim-typewriter2{
-  animation: typewriter 4s steps(44) 5s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-             text-align: right;
-  }
-  @keyframes typewriter{
-  from{width: 0;}
-  to{width: 22em;}
-  }
-  @keyframes blinkTextCursor{
-  from{border-right-color: transparent;}
-  to{border-right-color: transparent;}
-  }
+// .imessage p {
+//   border-radius: 1.15rem;
+//   line-height: 1.25;
+//   max-width: 75%;
+//   padding: 0.5rem .875rem;
+//   position: relative;
+//   word-wrap: break-word;
+// }
 
-  .anim-typewriter3{
-    animation: typewriter 4s steps(44) 8s 1 normal both,
-               blinkTextCursor 500ms steps(44) infinite normal;
-    }
-    @keyframes typewriter{
-    from{width: 0;}
-    to{width: 22em;}
-    }
-    @keyframes blinkTextCursor{
-    from{border-right-color: transparent;}
-    to{border-right-color: transparent;}
-    }
+// .imessage p::before,
+// .imessage p::after {
+//   bottom: -0.1rem;
+//   content: "";
+//   height: 1rem;
+//   position: absolute;
+// }
 
-    .anim-typewriter4{
-      animation: typewriter 4s steps(44) 11s 1 normal both,
-                 blinkTextCursor 500ms steps(44) infinite normal;
-                 text-align: center;
-      }
-      @keyframes typewriter{
-      from{width: 0;}
-      to{width: 22em;}
-      }
-      @keyframes blinkTextCursor{
-      from{border-right-color: transparent;}
-      to{border-right-color: transparent;}
-      }
-      .anim-typewriter5{
-        animation: typewriter 4s steps(44) 14s 1 normal both,
-                   blinkTextCursor 500ms steps(44) infinite normal;
-                   text-align: center;
-        }
-        @keyframes typewriter{
-        from{width: 0;}
-        to{width: 22em;}
-        }
-        @keyframes blinkTextCursor{
-        from{border-right-color: transparent;}
-        to{border-right-color: transparent;}
-        }
+// p.from-me {
+//   align-self: flex-end;
+//   background-color: #248bf5;
+//   color: #fff;
+// }
 
-        .anim-typewriter6{
-          animation: typewriter 4s steps(44) 17s 1 normal both,
-                     blinkTextCursor 500ms steps(44) infinite normal;
-                     text-align: center;
-          }
-          @keyframes typewriter{
-          from{width: 0;}
-          to{width: 22em;}
-          }
-          @keyframes blinkTextCursor{
-          from{border-right-color: transparent;}
-          to{border-right-color: transparent;}
-          }
+// p.from-me::before {
+//   border-bottom-left-radius: 0.8rem 0.7rem;
+//   border-right: 1rem solid #248bf5;
+//   right: -0.35rem;
+//   transform: translate(0, -0.1rem);
+// }
 
-          .anim-typewriter7{
-            animation: typewriter 4s steps(44) 20s 1 normal both,
-                       blinkTextCursor 500ms steps(44) infinite normal;
-                       text-align: center;
-            }
-            @keyframes typewriter{
-            from{width: 0;}
-            to{width: 22em;}
-            }
-            @keyframes blinkTextCursor{
-            from{border-right-color: transparent;}
-            to{border-right-color: transparent;}
-            }
+// p.from-me::after {
+//   background-color: #fff;
+//   border-bottom-left-radius: 0.5rem;
+//   right: -40px;
+//   transform:translate(-30px, -2px);
+//   width: 10px;
+// }
 
-            .anim-typewriter8{
-              animation: typewriter 4s steps(44) 23s 1 normal both,
-                         blinkTextCursor 500ms steps(44) normal;
-                         text-align: center;
-              }
-              @keyframes typewriter{
-              from{width: 0;}
-              to{width: 22em;}
-              }
-              @keyframes blinkTextCursor{
-              from{border-right-color: transparent;}
-              to{border-right-color: transparent;}
-              }
+// p[class^="from-"] {
+//   margin: 0.5rem 0;
+//   width: fit-content;
+// }
 
-              .anim-typewriter9{
-                animation: typewriter 4s steps(44) 26s 1 normal both,
-                           blinkTextCursor 500ms steps(44) normal;
-                           text-align: center;
-                }
-                @keyframes typewriter{
-                from{width: 0;}
-                to{width: 22em;}
-                }
-                @keyframes blinkTextCursor{
-                from{border-right-color: transparent;}
-                to{border-right-color: transparent;}
-                }
+// p.from-me ~ p.from-me {
+//   margin: 0.25rem 0 0;
+// }
+
+// p.from-me ~ p.from-me:not(:last-child) {
+//   margin: 0.25rem 0 0;
+// }
+
+// p.from-me ~ p.from-me:last-child {
+//   margin-bottom: 0.5rem;
+// }
+
+// p.from-them {
+//   align-items: flex-start;
+//   background-color: #e5e5ea;
+//   color: #000;
+// }
+
+// p.from-them:before {
+//   border-bottom-right-radius: 0.8rem 0.7rem;
+//   border-left: 1rem solid #e5e5ea;
+//   left: -0.35rem;
+//   transform: translate(0, -0.1rem);
+// }
+
+// p.from-them::after {
+//   background-color: #fff;
+//   border-bottom-right-radius: 0.5rem;
+//   left: 20px;
+//   transform: translate(-30px, -2px);
+//   width: 10px;
+// }
+
+// p[class^="from-"].emoji {
+//   background: none;
+//   font-size: 2.5rem;
+// }
+
+// p[class^="from-"].emoji::before {
+//   content: none;
+// }
+
+// .no-tail::before {
+//   display: none;
+// }
+
+// .margin-b_none {
+//   margin-bottom: 0 !important;
+// }
+
+// .margin-b_one {
+//   margin-bottom: 1rem !important;
+// }
+
+// .margin-t_one {
+//   margin-top: 1rem !important;
+// }
+
+
+
+
+  // .anim-typewriter3{
+  //   animation: typewriter 4s steps(44) 2s 1 normal both,
+  //              blinkTextCursor 500ms steps(44) infinite normal;
+  //   }
+  //   @keyframes typewriter{
+  //   from{width: 0;}
+  //   to{width: 22em;}
+  //   }
+  //   @keyframes blinkTextCursor{
+  //   from{border-right-color: transparent;}
+  //   to{border-right-color: transparent;}
+  //   }
+
+  //   .anim-typewriter4{
+  //     animation: typewriter 4s steps(44) 5s 1 normal both,
+  //                blinkTextCursor 500ms steps(44) infinite normal;
+  //                text-align: center;
+  //     }
+  //     @keyframes typewriter{
+  //     from{width: 0;}
+  //     to{width: 22em;}
+  //     }
+  //     @keyframes blinkTextCursor{
+  //     from{border-right-color: transparent;}
+  //     to{border-right-color: transparent;}
+  //     }
+  //     .anim-typewriter5{
+  //       animation: typewriter 4s steps(44) 8s 1 normal both,
+  //                  blinkTextCursor 500ms steps(44) infinite normal;
+  //                  text-align: center;
+  //       }
+  //       @keyframes typewriter{
+  //       from{width: 0;}
+  //       to{width: 22em;}
+  //       }
+  //       @keyframes blinkTextCursor{
+  //       from{border-right-color: transparent;}
+  //       to{border-right-color: transparent;}
+  //       }
+
+  //       .anim-typewriter6{
+  //         animation: typewriter 4s steps(44) 11s 1 normal both,
+  //                    blinkTextCursor 500ms steps(44) infinite normal;
+  //                    text-align: center;
+  //         }
+  //         @keyframes typewriter{
+  //         from{width: 0;}
+  //         to{width: 22em;}
+  //         }
+  //         @keyframes blinkTextCursor{
+  //         from{border-right-color: transparent;}
+  //         to{border-right-color: transparent;}
+  //         }
+
+  //         .anim-typewriter7{
+  //           animation: typewriter 4s steps(44) 14s 1 normal both,
+  //                      blinkTextCursor 500ms steps(44) infinite normal;
+  //                      text-align: center;
+  //           }
+  //           @keyframes typewriter{
+  //           from{width: 0;}
+  //           to{width: 22em;}
+  //           }
+  //           @keyframes blinkTextCursor{
+  //           from{border-right-color: transparent;}
+  //           to{border-right-color: transparent;}
+  //           }
+
+  //           .anim-typewriter8{
+  //             animation: typewriter 4s steps(44) 17s 1 normal both,
+  //                        blinkTextCursor 500ms steps(44) normal;
+  //                        text-align: center;
+  //             }
+  //             @keyframes typewriter{
+  //             from{width: 0;}
+  //             to{width: 22em;}
+  //             }
+  //             @keyframes blinkTextCursor{
+  //             from{border-right-color: transparent;}
+  //             to{border-right-color: transparent;}
+  //             }
+
+  //             .anim-typewriter9{
+  //               animation: typewriter 4s steps(44) 20s 1 normal both,
+  //                          blinkTextCursor 500ms steps(44) normal;
+  //                          text-align: center;
+  //               }
+  //               @keyframes typewriter{
+  //               from{width: 0;}
+  //               to{width: 22em;}
+  //               }
+  //               @keyframes blinkTextCursor{
+  //               from{border-right-color: transparent;}
+  //               to{border-right-color: transparent;}
+  //               }

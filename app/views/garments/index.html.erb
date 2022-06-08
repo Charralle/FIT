@@ -15,6 +15,7 @@ De là on peut le visualiser sur l'avatar ? Le vendre ? Le partager à quelqu'un
         <div class="m-2">
           <% if url_valid?("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}") %>
             <%= link_to image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}", size: "250x375"), garment_path(garment) %>
+            <p>Price: <%= humanized_money_with_symbol(garment.price) %></p>
           <% else %>
             <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
           <% end %>
@@ -40,7 +41,7 @@ De là on peut le visualiser sur l'avatar ? Le vendre ? Le partager à quelqu'un
         <div>
           <% if url_valid?("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}") %>
             <%= link_to image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{garment.image_name}", size: "250x375"), garment_path(garment) %>
-            <p>Amount: <%= humanized_money_with_symbol(garment.price_cents) %></p>
+            <p>Price: <%= humanized_money_with_symbol(garment.price) %></p>
           <% else %>
             <%= link_to image_tag("karl.jpg", size: "180x250"), garment_path(garment) %>
           <% end %>

@@ -3,7 +3,7 @@
 <% fabric_selection = Fabric.where("shape_id = :shape_id", { shape_id: "#{@garment.shape_id}" }) %>
 
 
-<div class = "container-fab-det" id="fabric-section">
+<div class = "container-fab-det" id="fabric-section" data-controller="view">
   <div class = "card-fab-det">
     <div class="image image_garment_simulation" id="image">
       <%# <%= image_tag(@garment.image_name, size: "500x750") %>

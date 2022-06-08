@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get '/garments/:id/edit_selected', to: 'garments#edit_selected', as: :garment_edit_selected
   get '/avatar', to: 'garments#avatar', as: :garment_avatar
 
-
-
-
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

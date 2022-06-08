@@ -1,6 +1,6 @@
 class Shape < ApplicationRecord
   belongs_to :category
-
+  has_many :orders
   has_many :garments
   has_many :fabrics
   has_many :details

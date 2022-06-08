@@ -129,9 +129,4 @@ Detail.create({shape_id: longblazer_shape.id, name: "Golden", description: "Le D
 Detail.create({shape_id: longblazer_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
 Detail.create({shape_id: longblazer_shape.id, name: "Emeraud", description: "Le Detail 1, donne un style incroyable", code: "emeraud"})
 
-Garment.create!( {user_id: User.last, category_id: pants.id, shape_id: cargo_shape.id, fabric_id: cargo_fab.id, detail_id: cargo_det.id, selected: true} )
-Garment.create!( {user_id: User.last, category_id: pants.id, shape_id: straight_shape.id, fabric_id: straight_fab.id, detail_id: straight_det.id, selected: true} )
-Garment.create!( {user_id: User.last, category_id: top.id, shape_id: turtleneck_shape.id, fabric_id: turtle_fab.id, detail_id: turtle_det.id, selected: true} )
-Garment.create!( {user_id: User.last, category_id: top.id, shape_id: bustier_shape.id, fabric_id: bustier_fab.id, detail_id: bustier_det.id, selected: true} )
-
 p "Seeds created Sir !"

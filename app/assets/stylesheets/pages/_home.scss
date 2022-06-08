@@ -342,8 +342,8 @@ color: #fff;
 
 .div_fit {
   display: grid;
-  place-items: center;
-  margin-top: 50px;
+  place-items: end;
+  margin-bottom: 15px;
 }
 
 .div_button {
@@ -1114,11 +1114,143 @@ section {
   text-align: center;
 }
 
-.environment {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.5;
+.line-1{
+  border-right: 2px solid rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Courier";
+  font-size: 25px;
 }
+
+.line-2{
+  border-right: 2px solid rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Courier";
+  font-size: 25px;
+  text-align: center;
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 22em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: transparent;}
+to{border-right-color: transparent;}
+}
+
+.anim-typewriter2{
+  animation: typewriter 4s steps(44) 5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+             text-align: right;
+  }
+  @keyframes typewriter{
+  from{width: 0;}
+  to{width: 22em;}
+  }
+  @keyframes blinkTextCursor{
+  from{border-right-color: transparent;}
+  to{border-right-color: transparent;}
+  }
+
+  .anim-typewriter3{
+    animation: typewriter 4s steps(44) 8s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter{
+    from{width: 0;}
+    to{width: 22em;}
+    }
+    @keyframes blinkTextCursor{
+    from{border-right-color: transparent;}
+    to{border-right-color: transparent;}
+    }
+
+    .anim-typewriter4{
+      animation: typewriter 4s steps(44) 11s 1 normal both,
+                 blinkTextCursor 500ms steps(44) infinite normal;
+                 text-align: center;
+      }
+      @keyframes typewriter{
+      from{width: 0;}
+      to{width: 22em;}
+      }
+      @keyframes blinkTextCursor{
+      from{border-right-color: transparent;}
+      to{border-right-color: transparent;}
+      }
+      .anim-typewriter5{
+        animation: typewriter 4s steps(44) 14s 1 normal both,
+                   blinkTextCursor 500ms steps(44) infinite normal;
+                   text-align: center;
+        }
+        @keyframes typewriter{
+        from{width: 0;}
+        to{width: 22em;}
+        }
+        @keyframes blinkTextCursor{
+        from{border-right-color: transparent;}
+        to{border-right-color: transparent;}
+        }
+
+        .anim-typewriter6{
+          animation: typewriter 4s steps(44) 17s 1 normal both,
+                     blinkTextCursor 500ms steps(44) infinite normal;
+                     text-align: center;
+          }
+          @keyframes typewriter{
+          from{width: 0;}
+          to{width: 22em;}
+          }
+          @keyframes blinkTextCursor{
+          from{border-right-color: transparent;}
+          to{border-right-color: transparent;}
+          }
+
+          .anim-typewriter7{
+            animation: typewriter 4s steps(44) 20s 1 normal both,
+                       blinkTextCursor 500ms steps(44) infinite normal;
+                       text-align: center;
+            }
+            @keyframes typewriter{
+            from{width: 0;}
+            to{width: 22em;}
+            }
+            @keyframes blinkTextCursor{
+            from{border-right-color: transparent;}
+            to{border-right-color: transparent;}
+            }
+
+            .anim-typewriter8{
+              animation: typewriter 4s steps(44) 23s 1 normal both,
+                         blinkTextCursor 500ms steps(44) normal;
+                         text-align: center;
+              }
+              @keyframes typewriter{
+              from{width: 0;}
+              to{width: 22em;}
+              }
+              @keyframes blinkTextCursor{
+              from{border-right-color: transparent;}
+              to{border-right-color: transparent;}
+              }
+
+              .anim-typewriter9{
+                animation: typewriter 4s steps(44) 26s 1 normal both,
+                           blinkTextCursor 500ms steps(44) normal;
+                           text-align: center;
+                }
+                @keyframes typewriter{
+                from{width: 0;}
+                to{width: 22em;}
+                }
+                @keyframes blinkTextCursor{
+                from{border-right-color: transparent;}
+                to{border-right-color: transparent;}
+                }

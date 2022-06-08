@@ -1,17 +1,18 @@
-<h2 class='your_fit_title'> Your Unique Design ! </h2>
+<h2 class='your_fit_title'> This is your FIT! </h2>
   <div class="container container_show">
     <div class="card">
       <div class="image image_show">
         <div class = "centrage"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "333x500") %></div>
       </div>
       <div class="content">
-        <h3 class='your_fit_subtitle'>This is your FIT</h3>
+        <%# <h3 class='your_fit_subtitle'>This is your FIT</h3> %>
         <p>Category: <%= @garment.category.name %></p>
         <p>Shape: <%= @garment.shape.name %></p>
+        <p>Fabric: <%= @garment.fabric.name %></p>
         <p>Detail: <%= @garment.detail.name %></p>
         <%= render"shared/button", garment: @garment %>
         <%= render"shared/button_selected", garment: @garment %>
-        <%= render"shared/button_purchase", garment: @garment %>
+        <%# <%= render"shared/button_purchase", garment: @garment %>
         <%= render"shared/button_owen", garment: @garment %>
       </div>
     </div>

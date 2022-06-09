@@ -91,6 +91,9 @@ width: 90%;
     width: 250px;
     height: 250px;
     object-fit: cover;
+    outline-color: black;
+    outline-style: dashed;
+    border-radius: 30px;
   }
 
   .bouton_create_garment {

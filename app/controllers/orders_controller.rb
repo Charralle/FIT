@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   def create
     garment = Garment.find(params[:garment_id])
-    order  = Order.create!(garment: garment, amount: garment.price, state: 'pending', user: current_user)
+    order = Order.create!(garment: garment, amount: garment.price, state: 'pending', user: current_user)
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],

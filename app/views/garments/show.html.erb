@@ -6,10 +6,11 @@
       </div>
       <div class="content">
         <%# <h3 class='your_fit_subtitle'>This is your FIT</h3> %>
-        <p>Category: <%= @garment.category.name %></p>
+        <%# <p>Category: <%= @garment.category.name %></p>
         <p>Shape: <%= @garment.shape.name %></p>
         <p>Fabric: <%= @garment.fabric.name %></p>
         <p>Detail: <%= @garment.detail.name %></p>
+        <p>Price: <%= humanized_money_with_symbol(@garment.price) %></p>
         <%= render"shared/button", garment: @garment %>
         <%= render"shared/button_selected", garment: @garment %>
         <%# <%= render"shared/button_purchase", garment: @garment %>

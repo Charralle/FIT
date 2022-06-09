@@ -13,21 +13,31 @@
 
 
 .container_home {
-  display: flex;
-  justify-content: space-evenly;
-  justify-items: left;
-  color: var(--color);
-  font-size: 1.5rem;
-  display: flex;
-  background-color: rgb(207, 189, 158);
-  border-radius: 30px;
-  margin-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: left;
+    color: var(--color);
+    font-size: 1.5rem;
+    display: flex;
+    background-color: #cfbd9e;
+    border-radius: 0px;
+    margin-top: 1px;
+    padding: 0px;
+    max-width: 1237px;
+    border-radius: 30px;
 }
 
-.div_container {
+.div_container_1 {
+  font-family: 'Rajdhani', sans-serif;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  margin-bottom: auto;
+  margin-left: -71px;
+  text-align: center;
+}
+.div_container_2 {
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
   font-family: 'Rajdhani', sans-serif;
 }
 
@@ -45,6 +55,8 @@
 .stack {
   display: grid;
   grid-template-columns: 1fr;
+  text-decoration: underline;
+  font-size: xxx-large;
 }
 
 .stack span {
@@ -60,119 +72,9 @@
   animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
 }
 
-.stack span:nth-child(odd) { --glitch-translate: 8px; }
-.stack span:nth-child(even) { --glitch-translate: -8px; }
-
-@keyframes stack {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%);
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-  };
-  60% {
-    opacity: 0.5;
-    transform: translateX(50%);
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-  }
-  4%, 100% {  text-shadow: none; transform: none; }
-}
 
 
 
-#hero-main{
-  position: relative;
-  padding-top: 2%;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-
-}
-
-.text-box-hero-button{
-  .button_fabric_hero{
-position: absolute;
-  display: flex;
- color: black;
-top: 72%;
-left: 80%;
-background-color: rgb(187, 161, 117);
-font-family: 'Rajdhani', sans-serif;
-color: #fff;
-}
-
-
-}
-
-.button_fabric_hero:link,
-.button_fabric_hero:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 35px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all .2s;
-  position: absolute;
-}
-
-.button_fabric_hero:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.button_fabric_hero:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.button_fabric_hero-white {
-  background-color: #fff;
-  color: #777;
-}
-
-.button_fabric_hero::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s;
-}
-
-.button_fabric_hero-white::after {
-  background-color: #fff;
-}
-
-.button_fabric_hero:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.button_fabric_hero-animated {
-  animation: moveInBottom 5s ease-out;
-  animation-fill-mode: backwards;
-}
 
 @keyframes moveInBottom {
   0% {
@@ -270,44 +172,46 @@ color: #fff;
 
 .wrapper_fit {
   position: relative;
-  perspective: 40em;
+  perspective: 10em;
   display: grid;
   transform-style: preserve-3d;
+  margin-right: 14px;
 }
 
 .card_fit {
   grid-area: 1 / 1;
-  height: 100px;
-  width: 200px;
-  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-  background: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-  font-family: 'Rajdhani', sans-serif;
-  backface-visibility: hidden;
-  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+  height: 98px;
+  width: 265px;
+    transform: translateX(10px) rotateY(25deg) rotateX(15deg);
+    background: #a19175 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 28px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 1200;
+    font-family: 'Rajdhani', sans-serif;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
+
 
 .button_title {
   font-size: 100px;
 }
 
 .card_fit .enclosed {
-  background: rgb(207, 189, 158) 5px;
-;
-  line-height: 1;
-  color: white;
-  padding: 0 5px;
-  display: inline-block;
-  transform: translate(-1px, 1px) scale(0.75);
-  transform-origin: right center;
-  font-family: 'Rajdhani', sans-serif;
+  // background: #cfbd9e 5px; */
+    font-size: 65px;
+    line-height: 1;
+    color: white;
+    padding: 0 -1px;
+    display: inline-block;
+    transform: translate(-57px, -4px) scale(0.75);
+    transform-origin: right center;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .wrapper_fit:before {
@@ -322,7 +226,7 @@ color: #fff;
   background: transparent;
   transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
   pointer-events: none;
-  border: var(--bw) solid #000;
+  border: var(--bw) solid #FAFAFA;
   box-sizing: content-box;
 }
 
@@ -343,15 +247,17 @@ color: #fff;
 .div_fit {
   display: grid;
   place-items: end;
-  margin-top: 320px;
-  margin-bottom: 105px;
+
+
 }
 
 .div_button {
   display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
-.ul_carrousel {
+.ul_carousel__item {
   width: 800px;
   height: 200px;
   display: flex;
@@ -361,6 +267,12 @@ color: #fff;
 
 .div_carrousel {
   display: flex;
+  padding-left: 10px;
+}
+.ul_carrousel_1{
+
+  list-style-type: none;
+  padding: 0px;
 }
 
 .ul_carrousel > .li_carrousel {
@@ -378,10 +290,11 @@ color: #fff;
 }
 
 .p_carrousel {
-  font-size: 30px;
+  font-size: 15px;
   color: white;
   line-height: 1.5em;
   font-family: 'Rajdhani', sans-serif;
+  text-align: center;
 }
 
 .strong_carrousel {
@@ -400,7 +313,7 @@ color: #fff;
 .li_carrousel {
   opacity: 0;
   animation: fader 6s linear forwards;
-  margin-left: 100px;
+
 }
 
 .first_anim {
@@ -424,8 +337,8 @@ color: #fff;
 @mixin carousel($items, $animation: 'default') {
   .carousel {
     margin-top: 10px;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 55%;
     position: relative;
     overflow: hidden;
     border-radius: 30px;
@@ -524,6 +437,7 @@ color: #fff;
 
       img {
         width: 100%;
+        height: 70%;
         vertical-align: middle;
       }
     }
@@ -1109,11 +1023,6 @@ section {
     font 7s step-end infinite, movement 8s step-end infinite;
 }
 
-.hero-container {
-  position: relative;
-  padding: 100px 0;
-  text-align: center;
-}
 
 .line-1{
   border-right: 2px solid rgba(255,255,255,.75);
@@ -1132,216 +1041,8 @@ section {
   text-align: center;
 }
 
-/* Animation */
-// .imessage {
-//   background-color: #fff;
-//   border: 1px solid #e5e5ea;
-//   border-radius: 0.25rem;
-//   display: flex;
-//   flex-direction: column;
-//   font-family: "SanFrancisco";
-//   font-size: 1.25rem;
-//   margin: 0 auto 1rem;
-//   max-width: 600px;
-//   padding: 0.5rem 1.5rem;
-// }
-
-// .imessage p {
-//   border-radius: 1.15rem;
-//   line-height: 1.25;
-//   max-width: 75%;
-//   padding: 0.5rem .875rem;
-//   position: relative;
-//   word-wrap: break-word;
-// }
-
-// .imessage p::before,
-// .imessage p::after {
-//   bottom: -0.1rem;
-//   content: "";
-//   height: 1rem;
-//   position: absolute;
-// }
-
-// p.from-me {
-//   align-self: flex-end;
-//   background-color: #248bf5;
-//   color: #fff;
-// }
-
-// p.from-me::before {
-//   border-bottom-left-radius: 0.8rem 0.7rem;
-//   border-right: 1rem solid #248bf5;
-//   right: -0.35rem;
-//   transform: translate(0, -0.1rem);
-// }
-
-// p.from-me::after {
-//   background-color: #fff;
-//   border-bottom-left-radius: 0.5rem;
-//   right: -40px;
-//   transform:translate(-30px, -2px);
-//   width: 10px;
-// }
-
-// p[class^="from-"] {
-//   margin: 0.5rem 0;
-//   width: fit-content;
-// }
-
-// p.from-me ~ p.from-me {
-//   margin: 0.25rem 0 0;
-// }
-
-// p.from-me ~ p.from-me:not(:last-child) {
-//   margin: 0.25rem 0 0;
-// }
-
-// p.from-me ~ p.from-me:last-child {
-//   margin-bottom: 0.5rem;
-// }
-
-// p.from-them {
-//   align-items: flex-start;
-//   background-color: #e5e5ea;
-//   color: #000;
-// }
-
-// p.from-them:before {
-//   border-bottom-right-radius: 0.8rem 0.7rem;
-//   border-left: 1rem solid #e5e5ea;
-//   left: -0.35rem;
-//   transform: translate(0, -0.1rem);
-// }
-
-// p.from-them::after {
-//   background-color: #fff;
-//   border-bottom-right-radius: 0.5rem;
-//   left: 20px;
-//   transform: translate(-30px, -2px);
-//   width: 10px;
-// }
-
-// p[class^="from-"].emoji {
-//   background: none;
-//   font-size: 2.5rem;
-// }
-
-// p[class^="from-"].emoji::before {
-//   content: none;
-// }
-
-// .no-tail::before {
-//   display: none;
-// }
-
-// .margin-b_none {
-//   margin-bottom: 0 !important;
-// }
-
-// .margin-b_one {
-//   margin-bottom: 1rem !important;
-// }
-
-// .margin-t_one {
-//   margin-top: 1rem !important;
-// }
-
-
-
-
-  // .anim-typewriter3{
-  //   animation: typewriter 4s steps(44) 2s 1 normal both,
-  //              blinkTextCursor 500ms steps(44) infinite normal;
-  //   }
-  //   @keyframes typewriter{
-  //   from{width: 0;}
-  //   to{width: 22em;}
-  //   }
-  //   @keyframes blinkTextCursor{
-  //   from{border-right-color: transparent;}
-  //   to{border-right-color: transparent;}
-  //   }
-
-  //   .anim-typewriter4{
-  //     animation: typewriter 4s steps(44) 5s 1 normal both,
-  //                blinkTextCursor 500ms steps(44) infinite normal;
-  //                text-align: center;
-  //     }
-  //     @keyframes typewriter{
-  //     from{width: 0;}
-  //     to{width: 22em;}
-  //     }
-  //     @keyframes blinkTextCursor{
-  //     from{border-right-color: transparent;}
-  //     to{border-right-color: transparent;}
-  //     }
-  //     .anim-typewriter5{
-  //       animation: typewriter 4s steps(44) 8s 1 normal both,
-  //                  blinkTextCursor 500ms steps(44) infinite normal;
-  //                  text-align: center;
-  //       }
-  //       @keyframes typewriter{
-  //       from{width: 0;}
-  //       to{width: 22em;}
-  //       }
-  //       @keyframes blinkTextCursor{
-  //       from{border-right-color: transparent;}
-  //       to{border-right-color: transparent;}
-  //       }
-
-  //       .anim-typewriter6{
-  //         animation: typewriter 4s steps(44) 11s 1 normal both,
-  //                    blinkTextCursor 500ms steps(44) infinite normal;
-  //                    text-align: center;
-  //         }
-  //         @keyframes typewriter{
-  //         from{width: 0;}
-  //         to{width: 22em;}
-  //         }
-  //         @keyframes blinkTextCursor{
-  //         from{border-right-color: transparent;}
-  //         to{border-right-color: transparent;}
-  //         }
-
-  //         .anim-typewriter7{
-  //           animation: typewriter 4s steps(44) 14s 1 normal both,
-  //                      blinkTextCursor 500ms steps(44) infinite normal;
-  //                      text-align: center;
-  //           }
-  //           @keyframes typewriter{
-  //           from{width: 0;}
-  //           to{width: 22em;}
-  //           }
-  //           @keyframes blinkTextCursor{
-  //           from{border-right-color: transparent;}
-  //           to{border-right-color: transparent;}
-  //           }
-
-  //           .anim-typewriter8{
-  //             animation: typewriter 4s steps(44) 17s 1 normal both,
-  //                        blinkTextCursor 500ms steps(44) normal;
-  //                        text-align: center;
-  //             }
-  //             @keyframes typewriter{
-  //             from{width: 0;}
-  //             to{width: 22em;}
-  //             }
-  //             @keyframes blinkTextCursor{
-  //             from{border-right-color: transparent;}
-  //             to{border-right-color: transparent;}
-  //             }
-
-  //             .anim-typewriter9{
-  //               animation: typewriter 4s steps(44) 20s 1 normal both,
-  //                          blinkTextCursor 500ms steps(44) normal;
-  //                          text-align: center;
-  //               }
-  //               @keyframes typewriter{
-  //               from{width: 0;}
-  //               to{width: 22em;}
-  //               }
-  //               @keyframes blinkTextCursor{
-  //               from{border-right-color: transparent;}
-  //               to{border-right-color: transparent;}
-  //               }
+.title_and_button{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+}

@@ -14,7 +14,7 @@
   <div class="card-fab-det width_for_square_container" data-controller="selection" data-selection-garment-id-value="<%= @garment.id %>">
       <%= simple_form_for @garment do |f| %>
         <% fabric_selection.each do |fabric| %>
-          <link rel="preload" href="https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/<%= @garment.category.code %>_<%= @garment.shape.code %>_<%= fabric.code %>.png" as="image" type="image/png">
+          <link rel="preload" href="https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/garments/<%= @garment.category.code %>_<%= @garment.shape.code %>_<%= fabric.code %>.png" as="image" type="image/png"/>
             <div class="radio-button">
               <%= f.radio_button(:fabric_id, fabric.id) %>
               <label class="image image_fabric_square" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">

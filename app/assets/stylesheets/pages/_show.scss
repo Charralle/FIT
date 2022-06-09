@@ -227,3 +227,10 @@ $duration: 5s;
     animation: bar-#{$i} $duration ease-out infinite forwards;
   }
 }
+
+
+.dash {
+  outline-color: black;
+  outline-style: dashed;
+  border-radius: 30px;
+}

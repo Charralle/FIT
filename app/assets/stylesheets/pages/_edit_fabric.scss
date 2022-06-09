@@ -25,7 +25,11 @@
 
 
 .image_garment_simulation{
-left: auto;
+  left: auto;
+  outline-color: black;
+  outline-style: dashed;
+  border-radius: 30px;
+  background-color: white;
 }
 
 .width_for_square_container{
@@ -34,4 +38,15 @@ left: auto;
 
 .fabric_name_for_square{
   font-family: Rajdhani, sans-serif;
+}
+
+
+.dash {
+  outline-color: black;
+  outline-style: dashed;
+  border-radius: 30px;
+}
+
+.border {
+  border-radius: 30px;
 }

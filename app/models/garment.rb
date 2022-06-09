@@ -1,6 +1,6 @@
 class Garment < ApplicationRecord
   belongs_to :user
-
+  has_many :orders, dependent: :destroy
   belongs_to :category
   belongs_to :shape, optional: true
   belongs_to :fabric, optional: true

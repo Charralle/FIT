@@ -47,3 +47,13 @@ namespace :upload_shapes do
     puts "zbi"
   end
 end
+
+namespace :upload_none do
+  desc "This rake upload all none photos to Cloudinary"
+  task :exec => :environment do
+    Dir.glob("#{Rails.root}/app/assets/images/none/Garments_none/*.png").each do |file|
+      Cloudinary::Uploader.upload(file, :use_filename => true, :unique_filename => false, :folder => "fit/none")
+    end
+    puts "zbi"
+  end
+end

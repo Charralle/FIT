@@ -18,7 +18,7 @@
           <%= f.radio_button(:detail_id, detail.id) %>
           <label class="image" for="garment_detail_id_<%= detail.id %>" data-action="click->selection#select" data-selection-detail-id-param="<%= detail.id %>">
            <div class= detail_name_for_square> <%=detail.name %></div>
-            <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/detail_name/detail_#{detail.code}.jpg", size: "100x100") %>
+            <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/detail_name/detail_#{detail.code}.jpg", size: "100x100", class:"border") %>
           </label>
         </div>
       <% end %>

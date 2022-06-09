@@ -11,14 +11,14 @@
   <%= simple_form_for @garment do |f| %>
     <div class="card_align">
 
-      <%= f.input :shape_id, wrapper_html: { class: 'd-flex max-content flex-wrap' }, as: :radio_buttons, collection: shape_selection, label_method: lambda { |shape| render "garments/shape_label", shape: shape, category_selection: category_selection } %>
+      <%= f.input :shape_id, wrapper_html: { class: 'd-flex max-content flex-wrap' }, as: :radio_buttons, collection: shape_selection, label_method: lambda { |shape| render "garments/shape_label", shape: shape, category_selection: category_selection} %>
 
       <div class="card_align1 form-check">
-          <%= image_tag "garments/#{@garment.category.code}_soldout_1.png", size: "250x375" %>
+          <%= image_tag "garments/#{@garment.category.code}_soldout_1.png", size: "250x375", class:"dash" %>
       </div>
 
       <div class="card_align1 form-check">
-        <%= image_tag "garments/#{@garment.category.code}_soldout_2.png", size: "250x375" %>
+        <%= image_tag "garments/#{@garment.category.code}_soldout_2.png", size: "250x375", class:"dash" %>
       </div>
     </div>
 

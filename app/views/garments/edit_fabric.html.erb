@@ -7,7 +7,7 @@
   <div class = "card-fab-det">
     <div class="image image_garment_simulation" id="image">
       <%# <%= image_tag(@garment.image_name, size: "500x750") %>
-      <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
+        <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "500x750") %>
     </div>
     <p>Price: <%= humanized_money_with_symbol(@garment.price) %></p>
   </div>
@@ -18,7 +18,7 @@
               <%= f.radio_button(:fabric_id, fabric.id) %>
               <label class="image image_fabric_square" for="garment_fabric_id_<%= fabric.id %>" data-action="click->selection#select" data-selection-fabric-id-param="<%= fabric.id %>">
                 <div class= fabric_name_for_square> <%=fabric.name %></div>
-                  <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/fabric_name/fabric_#{fabric.code}.jpg", size: "100x100") %>
+                  <%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/fabric_name/fabric_#{fabric.code}.jpg", size: "100x100", class:"border") %>
               </label>
             </div>
         <% end %>

@@ -92,6 +92,7 @@ Detail.create({shape_id: cargo_shape.id, name: "Papaye", description: "Le Detail
 Detail.create({shape_id: cargo_shape.id, name: "Patchwork", description: "Le Detail 1, donne un style incroyable", code: "patchwork"})
 Detail.create({shape_id: cargo_shape.id, name: "Pepper", description: "Le Detail 1, donne un style incroyable", code: "pepper"})
 Detail.create({shape_id: cargo_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
+Detail.create({shape_id: cargo_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 cargo_det = Detail.create({shape_id: cargo_shape.id, name: "Mushroom", description: "Le Detail 1, donne un style incroyable", code: "mushroom"})
 
 Detail.create({shape_id: straight_shape.id, name: "Glitter", description: "Le Detail 1, donne un style incroyable", code: "glitter"})
@@ -100,33 +101,39 @@ Detail.create({shape_id: straight_shape.id, name: "Papaye", description: "Le Det
 Detail.create({shape_id: straight_shape.id, name: "Patchwork", description: "Le Detail 1, donne un style incroyable", code: "patchwork"})
 Detail.create({shape_id: straight_shape.id, name: "Pepper", description: "Le Detail 1, donne un style incroyable", code: "pepper"})
 Detail.create({shape_id: straight_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
+Detail.create({shape_id: straight_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 straight_det = Detail.create({shape_id: straight_shape.id, name: "Mushroom", description: "Le Detail 1, donne un style incroyable", code: "mushroom"})
 
 Detail.create({shape_id: turtleneck_shape.id, name: "Fish", description: "Le Detail 1, donne un style incroyable", code: "fish"})
 Detail.create({shape_id: turtleneck_shape.id, name: "Flower", description: "Le Detail 1, donne un style incroyable", code: "flower"})
 Detail.create({shape_id: turtleneck_shape.id, name: "Goldring", description: "Le Detail 1, donne un style incroyable", code: "goldring"})
+Detail.create({shape_id: turtleneck_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 turtle_det = Detail.create({shape_id: turtleneck_shape.id, name: "Silverring", description: "Le Detail 1, donne un style incroyable", code: "silverring"})
 
 Detail.create({shape_id: bustier_shape.id, name: "Fish", description: "Le Detail 1, donne un style incroyable", code: "fish"})
 Detail.create({shape_id: bustier_shape.id, name: "Flower", description: "Le Detail 1, donne un style incroyable", code: "flower"})
 Detail.create({shape_id: bustier_shape.id, name: "Goldring", description: "Le Detail 1, donne un style incroyable", code: "goldring"})
+Detail.create({shape_id: bustier_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 bustier_det = Detail.create({shape_id: bustier_shape.id, name: "Silverring", description: "Le Detail 1, donne un style incroyable", code: "silverring"})
 
 Detail.create({shape_id: circle_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
 Detail.create({shape_id: circle_shape.id, name: "Japanese", description: "Le Detail 1, donne un style incroyable", code: "japanese"})
 Detail.create({shape_id: circle_shape.id, name: "Tiedieblue", description: "Le Detail 1, donne un style incroyable", code: "tiedieblue"})
 Detail.create({shape_id: circle_shape.id, name: "Jellyfish", description: "Le Detail 1, donne un style incroyable", code: "jellyfish"})
+Detail.create({shape_id: circle_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 Detail.create({shape_id: circle_shape.id, name: "Flower2", description: "Le Detail 1, donne un style incroyable", code: "flower2"})
 
 Detail.create({shape_id: drape_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
 Detail.create({shape_id: drape_shape.id, name: "Japanese", description: "Le Detail 1, donne un style incroyable", code: "japanese"})
 Detail.create({shape_id: drape_shape.id, name: "Tiedieblue", description: "Le Detail 1, donne un style incroyable", code: "tiedieblue"})
 Detail.create({shape_id: drape_shape.id, name: "Jellyfish", description: "Le Detail 1, donne un style incroyable", code: "jellyfish"})
+Detail.create({shape_id: drape_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 Detail.create({shape_id: drape_shape.id, name: "Flower2", description: "Le Detail 1, donne un style incroyable", code: "flower2"})
 
 Detail.create({shape_id: longblazer_shape.id, name: "Rubywhite", description: "Le Detail 1, donne un style incroyable", code: "rubywhite"})
 Detail.create({shape_id: longblazer_shape.id, name: "Golden", description: "Le Detail 1, donne un style incroyable", code: "golden"})
 Detail.create({shape_id: longblazer_shape.id, name: "Turquoise", description: "Le Detail 1, donne un style incroyable", code: "turquoise"})
+Detail.create({shape_id: longblazer_shape.id, name: "None", description: "Le Detail 1, donne un style incroyable", code: "none"})
 Detail.create({shape_id: longblazer_shape.id, name: "Emeraud", description: "Le Detail 1, donne un style incroyable", code: "emeraud"})
 
 p "Seeds created Sir !"

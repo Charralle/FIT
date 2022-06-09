@@ -16,8 +16,15 @@
         <%= render"shared/button_owen", garment: @garment %>
       </div>
     </div>
-    <div class="d-flex justify-content-end align-items-end" style="position: absolute;bottom: -77px;right: -56px;">
-      <div class="container_barcode">
+    <%#= submit_tag 'Purchase', class: 'btn btn-primary ' %>
+
+    <div class="d-flex justify-content-end align-items-end" style="position: absolute;bottom: -77px;right: 30px;flex-direction: column;">
+
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'garment_id', @garment.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary btn-purchase' %>
+       <% end %>
+      <%# <div class="container_barcode">
         <div class="barcode">
           <div></div>
           <div></div>
@@ -50,11 +57,7 @@
           <div></div>
           <div></div>
           <p>checkout</p>
-        </div>
-        <%= form_tag orders_path do %>
-            <%= hidden_field_tag 'garment_id', @garment.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-          <% end %>
+        </div> %>
       </div>
     </div>
   </div>

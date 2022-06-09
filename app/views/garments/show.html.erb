@@ -1,7 +1,7 @@
 <h2 class='your_fit_title'> This is your FIT! </h2>
   <div class="container container_show">
     <div class="card">
-      <div class="image image_show">
+      <div class="image image_show dash">
         <div class = "centrage"><%= image_tag("https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@garment.image_name}", size: "333x500") %></div>
       </div>
       <div class="content">
@@ -14,6 +14,50 @@
         <%= render"shared/button_selected", garment: @garment %>
         <%# <%= render"shared/button_purchase", garment: @garment %>
         <%= render"shared/button_owen", garment: @garment %>
+      </div>
+    </div>
+    <%#= submit_tag 'Purchase', class: 'btn btn-primary ' %>
+
+    <div class="d-flex justify-content-end align-items-end" style="position: absolute;bottom: -77px;right: 30px;flex-direction: column;">
+
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'garment_id', @garment.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary btn-purchase' %>
+       <% end %>
+      <%# <div class="container_barcode">
+        <div class="barcode">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <p>checkout</p>
+        </div> %>
       </div>
     </div>
   </div>

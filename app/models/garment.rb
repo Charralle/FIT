@@ -5,6 +5,7 @@ class Garment < ApplicationRecord
   belongs_to :shape, optional: true
   belongs_to :fabric, optional: true
   belongs_to :detail, optional: true
+  has_many :orders, dependent: :nullify
   monetize :price_cents
 
   # need to create a second method more close than this one

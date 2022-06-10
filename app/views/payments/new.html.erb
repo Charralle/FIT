@@ -2,9 +2,18 @@
   <div class="row py-4">
     <div class="col-md-3"><%= image_tag "https://res.cloudinary.com/fit-ts/image/upload/v1654522181/fit/#{@order.garment.image_name}", width: '100%' %></div>
     <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.garment.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <h1 class="new_checkout_summary_title">Checkout summary</h1>
+      <p class="new_checkout_summary_subtitle">Purchase of :</p>
+      <ul class= "new_checkout_summary_subtitle_list">
+       <li>Category: <%= @order.garment.category.name %> </li>
+       <li>Shape: <%= @order.garment.shape.name %></li>
+        <li>Fabric: <%= @order.garment.fabric.name %></li>
+        <li>Detail: <%= @order.garment.detail.name %> </li>
+       <li>For: <%= humanized_money_with_symbol @order.amount %></li>
+      </ul>
+      <p class="new_checkout_summary_subtitle"> Shipping Address : 16 Villa Gaudelet, 75011, PARIS, France</p>
+
+      <button id="pay" class="btn btn-purchase_1">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
